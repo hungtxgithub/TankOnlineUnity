@@ -1,4 +1,4 @@
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using Entity;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -26,7 +26,7 @@ public class TankController : MonoBehaviour
             Direction = Direction.Down,
             Hp = 10,
             Point = 0,
-            Position = new Vector3(Random.Range(0, 20), Random.Range(0, 20), 0),
+            Position = new Vector3(Random.Range(0, 2), Random.Range(0, 2), 0),
             Guid = GUID.Generate()
         };
         gameObject.transform.position = _tank.Position;
@@ -36,25 +36,45 @@ public class TankController : MonoBehaviour
         Move(Direction.Down);
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
+        float minX = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
+        float maxX = Camera.main.ViewportToWorldPoint(Vector3.one).x;
+        float minY = Camera.main.ViewportToWorldPoint(Vector3.zero).y;
+        float maxY = Camera.main.ViewportToWorldPoint(Vector3.one).y;
+        Renderer renderer = GetComponent<Renderer>();
+        float width = renderer.bounds.size.x;
+        float height = renderer.bounds.size.y;
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            Move(Direction.Left);
+            if (transform.position.x - width / 2 > minX)
+            {
+                Move(Direction.Left);
+            }
         }
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            Move(Direction.Down);
+            if (transform.position.y - height / 2 > minY)
+            {
+                Move(Direction.Down);
+            }
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            Move(Direction.Right);
+            if (transform.position.x + width / 2 < maxX)
+            {
+                Move(Direction.Right);
+            }
         }
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            Move(Direction.Up);
+            if (transform.position.y + height / 2 < maxY)
+            {
+                Move(Direction.Up);
+            }
         }
+
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -66,7 +86,7 @@ public class TankController : MonoBehaviour
     {
         _tank.Position = _tankMover.Move(direction);
         _tank.Direction = direction;
-        _cameraController.Move(_tank.Position);
+        //_cameraController.Move(_tank.Position);
         _renderer.sprite = direction switch
         {
             Direction.Down => tankDown,
