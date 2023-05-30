@@ -6,6 +6,24 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
+
+    private static TankController instance;
+    public static TankController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameObject().AddComponent<TankController>();
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     private Tank _tank;
 
@@ -106,5 +124,10 @@ public class TankController : MonoBehaviour
             InitialPosition = _tank.Position
         };
         GetComponent<TankFirer>().Fire(b);
+    }
+
+    public Tank getTank()
+    {
+        return _tank;
     }
 }
