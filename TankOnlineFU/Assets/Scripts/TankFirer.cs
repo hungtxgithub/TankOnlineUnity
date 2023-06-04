@@ -52,7 +52,7 @@ namespace DefaultNamespace
                     break;
                 case Direction.Right:
                     sr.sprite = spriteRight;
-                    force = new Vector2(speed, 0);
+                    force = new Vector2(speed, 0); 
 
                     break;
                 case Direction.Left:

@@ -7,6 +7,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Bullet Bullet { get; set; }
+    public GameObject bulletExplosion;
 
     public int MaxRange { get; set; }
 
@@ -21,6 +22,18 @@ public class BulletController : MonoBehaviour
         DestroyAfterRange();
     }
 
+    private void OnDestroy()
+    {
+        var pos = gameObject.transform.position;
+        var explosion = GameObject.Instantiate<GameObject>(bulletExplosion, pos, Quaternion.identity);
+        GameObject.Destroy(explosion, 0.2f);
+    }
+
+    private void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
+
     private void DestroyAfterRange()
     {
         var currentPos = gameObject.transform.position;
@@ -30,28 +43,28 @@ public class BulletController : MonoBehaviour
             case Direction.Down:
                 if (initPos.y - MaxRange >= currentPos.y)
                 {
-                    Destroy(gameObject);
+                    DestroyBullet();
                 }
 
                 break;
             case Direction.Up:
                 if (initPos.y + MaxRange <= currentPos.y)
                 {
-                    Destroy(gameObject);
+                    DestroyBullet();
                 }
 
                 break;
             case Direction.Left:
                 if (initPos.x - MaxRange >= currentPos.x)
                 {
-                    Destroy(gameObject);
+                    DestroyBullet();
                 }
 
                 break;
             case Direction.Right:
                 if (initPos.x + MaxRange <= currentPos.x)
                 {
-                    Destroy(gameObject);
+                    DestroyBullet();
                 }
 
                 break;
