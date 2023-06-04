@@ -7,12 +7,20 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Bullet Bullet { get; set; }
+    public GameObject bulletExplosion;
 
     public int MaxRange { get; set; }
 
     // Start is called before the first frame update
     private void Start()
     {
+    }
+
+    private void OnDestroy()
+    {
+        var pos = transform.position;
+        var explosion = GameObject.Instantiate(bulletExplosion, pos, Quaternion.identity);
+        Destroy(explosion, 0.3f);
     }
 
     // Update is called once per frame
