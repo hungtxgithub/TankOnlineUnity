@@ -7,8 +7,13 @@ TagManager:
   - Enemy
   - bullet
   - bulletEnemy
-  - Brick
-  - Stone
+  - Map
+  - Brick1
+  - Brick2
+  - Brick3
+  - Stone1
+  - Stone2
+  - Stone3
   - Strees
   - Water
   layers:
