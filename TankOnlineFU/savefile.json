@@ -1,1 +1,1 @@
-{"Map":[{"objectType":2,"value":"Brick(Clone)","positionX":0.3,"positionY":-0.04},{"objectType":2,"value":"Brick(Clone)","positionX":1.79999983,"positionY":-0.04},{"objectType":2,"value":"Stone(Clone)","positionX":3.15000057,"positionY":-0.04}]}
+{"Map":[{"objectType":"Strees","positionX":0.0300000049,"positionY":1.746},{"objectType":"Strees","positionX":-0.94,"positionY":1.746},{"objectType":"Brick1","positionX":-2.128,"positionY":1.491},{"objectType":"BrickCell","positionX":-2.128,"positionY":1.491},{"objectType":"BrickCell (1)","positionX":-2.128,"positionY":1.96257508}]}

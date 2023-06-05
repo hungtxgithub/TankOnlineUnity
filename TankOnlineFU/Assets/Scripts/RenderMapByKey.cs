@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -172,11 +173,13 @@ public class RenderMapByKey : MonoBehaviour
         // case Position change with Brick and Stone
         Vector3 vt3 = new Vector3(position.x - 0.218f, position.y - 0.255f, position.z);
 
+        Vector3 vt1 = new Vector3(position.x + 0.218f, position.y + 0.255f, position.z);
+
         if (ls.Count() > 0)
         {
             foreach (GameObject obj in ls)
             {
-                if(obj.transform.position == position || obj.transform.position == vt3)
+                if(obj.transform.position == position || obj.transform.position == vt3 || obj.transform.position == vt1)
                 {
                     GameObject mapGame = obj;
                     return mapGame;
@@ -188,17 +191,24 @@ public class RenderMapByKey : MonoBehaviour
 
     public int GetTypeOfMap(GameObject gObj)
     {
-        string name = gObj.name.Replace("(Clone)", "");
-
-        int type = int.Parse(name.Substring(name.Length - 1));
-
-        switch (type)
+        try
         {
-            case 1: return 1;
-            case 2: return 2;
-            case 3: return 0;
-            default: return 0;
+            string name = gObj.name.Replace("(Clone)", "");
+
+            int type = int.Parse(name.Substring(name.Length - 1));
+
+            switch (type)
+            {
+                case 1: return 1;
+                case 2: return 2;
+                case 3: return 0;
+                default: return 0;
+            }
+        } catch(Exception e)
+        {
+            return 0;
         }
+        
     }
 
 }
