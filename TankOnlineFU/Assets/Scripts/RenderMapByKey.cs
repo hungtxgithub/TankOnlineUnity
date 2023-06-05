@@ -102,11 +102,11 @@ public class RenderMapByKey : MonoBehaviour
             positionRender.y = TankController.Instance.getTank().Position.y - 0.255f;
             positionRender.z = TankController.Instance.getTank().Position.z;
 
-            if (CheckExitsMap(TankController.Instance.getTank().Position) != null)
+            if (CheckExitsMap(positionRender) != null)
             {
-                GameObject.Destroy(CheckExitsMap(TankController.Instance.getTank().Position));
+                GameObject.Destroy(CheckExitsMap(positionRender));
 
-                typeStone = GetTypeOfMap(CheckExitsMap(TankController.Instance.getTank().Position));
+                typeStone = GetTypeOfMap(CheckExitsMap(positionRender));
             }
             else
             {
@@ -116,7 +116,7 @@ public class RenderMapByKey : MonoBehaviour
             }
 
 
-            Instantiate(gameObjectStone[typeStone], TankController.Instance.getTank().Position, Quaternion.identity);
+            Instantiate(gameObjectStone[typeStone], positionRender, Quaternion.identity);
 
             typeStone++;
 
@@ -160,7 +160,7 @@ public class RenderMapByKey : MonoBehaviour
                 });
             }
 
-            SaveFile.Instance.saveFile("Map", lstBsSave);
+            //SaveFile.Instance.saveFile("Map", lstBsSave);
         }
     }
 
