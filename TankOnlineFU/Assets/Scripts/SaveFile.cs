@@ -10,7 +10,7 @@ public class SaveFile : MonoBehaviour
 {
     private static SaveFile instance;
 
-    private Dictionary<string, List<BaseSave>> dic = new Dictionary<string, List<BaseSave>>();
+    private Dictionary<string, List<MapData>> dic = new Dictionary<string, List<MapData>>();
 
     public static SaveFile Instance
     {
@@ -34,7 +34,7 @@ public class SaveFile : MonoBehaviour
     }
 
     // Save file
-    public void saveFile(string keySave, List<BaseSave> ls)
+    public void saveFile(string keySave, List<MapData> ls)
     {
         if(dic.ContainsKey(keySave))
         {
@@ -49,9 +49,11 @@ public class SaveFile : MonoBehaviour
     }
 
     // Load file
-    public void loadFile()
+    public List<MapData> loadFile()
     {
         string json = File.ReadAllText("savefile.json");
-        dic = JsonConvert.DeserializeObject<Dictionary<string, List<BaseSave>>>(json);
+        dic = JsonConvert.DeserializeObject<Dictionary<string, List<MapData>>>(json);
+
+        return dic["Map"];
     }
 }
