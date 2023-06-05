@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneCell (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5026917350701334087, guid: ab1f014d11689e144ab07ac4b951b11f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8582231958654068407, guid: ab1f014d11689e144ab07ac4b951b11f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -105,6 +109,10 @@ PrefabInstance:
     - target: {fileID: 5026917350701334087, guid: ab1f014d11689e144ab07ac4b951b11f, type: 3}
       propertyPath: m_Name
       value: StoneCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026917350701334087, guid: ab1f014d11689e144ab07ac4b951b11f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8582231958654068407, guid: ab1f014d11689e144ab07ac4b951b11f, type: 3}
       propertyPath: m_RootOrder
