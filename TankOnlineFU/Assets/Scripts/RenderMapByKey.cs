@@ -161,7 +161,7 @@ public class RenderMapByKey : MonoBehaviour
                 });
             }
 
-            SaveFile.Instance.saveFile("Map", lstBsSave);
+            //SaveFile.Instance.saveFile("Map", lstBsSave);
         }
     }
 
