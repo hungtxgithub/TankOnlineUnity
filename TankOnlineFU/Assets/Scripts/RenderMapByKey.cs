@@ -44,7 +44,7 @@ public class RenderMapByKey : MonoBehaviour
     private GameObject GObjBrick;
     private GameObject GObjStone;
 
-    List<BaseSave> lstBsSave = new List<BaseSave>();
+    List<MapData> lstBsSave = new List<MapData>();
 
     private Vector3 positionRender = new Vector3();
 
@@ -69,15 +69,15 @@ public class RenderMapByKey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
 
-            positionRender.x = TankController.Instance.getTank().Position.x - 0.18f;
-            positionRender.y = TankController.Instance.getTank().Position.y + 0.04f;
-            positionRender.z = TankController.Instance.getTank().Position.z;
+            //positionRender.x = TankController.Instance.getTank().Position.x - 0.18f;
+            //positionRender.y = TankController.Instance.getTank().Position.y + 0.04f;
+            //positionRender.z = TankController.Instance.getTank().Position.z;
 
-            if (checkExitsMap(positionRender) != null)
+            if (checkExitsMap(TankController.Instance.getTank().Position) != null)
             {
-                GameObject.Destroy(checkExitsMap(positionRender));
+                GameObject.Destroy(checkExitsMap(TankController.Instance.getTank().Position));
 
-                typeBrick = getTypeOfMap(checkExitsMap(positionRender));
+                typeBrick = getTypeOfMap(checkExitsMap(TankController.Instance.getTank().Position));
             }
             else
             {
@@ -87,7 +87,7 @@ public class RenderMapByKey : MonoBehaviour
             }
 
 
-            Instantiate(gameObjectBrick[typeBrick], positionRender, Quaternion.identity);
+            Instantiate(gameObjectBrick[typeBrick], TankController.Instance.getTank().Position, Quaternion.identity);
 
             typeBrick++;
 
@@ -98,15 +98,15 @@ public class RenderMapByKey : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            positionRender.x = TankController.Instance.getTank().Position.x - 0.18f;
-            positionRender.y = TankController.Instance.getTank().Position.y + 0.04f;
-            positionRender.z = TankController.Instance.getTank().Position.z;
+            //positionRender.x = TankController.Instance.getTank().Position.x - 0.18f;
+            //positionRender.y = TankController.Instance.getTank().Position.y + 0.04f;
+            //positionRender.z = TankController.Instance.getTank().Position.z;
 
-            if (checkExitsMap(positionRender) != null)
+            if (checkExitsMap(TankController.Instance.getTank().Position) != null)
             {
-                GameObject.Destroy(checkExitsMap(positionRender));
+                GameObject.Destroy(checkExitsMap(TankController.Instance.getTank().Position));
 
-                typeStone = getTypeOfMap(checkExitsMap(positionRender));
+                typeStone = getTypeOfMap(checkExitsMap(TankController.Instance.getTank().Position));
             }
             else
             {
@@ -116,7 +116,7 @@ public class RenderMapByKey : MonoBehaviour
             }
 
 
-            Instantiate(gameObjectStone[typeStone], positionRender, Quaternion.identity);
+            Instantiate(gameObjectStone[typeStone], TankController.Instance.getTank().Position, Quaternion.identity);
 
             typeStone++;
 
@@ -152,9 +152,9 @@ public class RenderMapByKey : MonoBehaviour
 
             foreach (var map in mapLs)
             {
-                lstBsSave.Add(new BaseSave()
+                lstBsSave.Add(new MapData()
                 {
-                    objectType = map.tag,
+                    objectType = map.name.Replace("(Clone)", ""),
                     positionX = map.transform.position.x,
                     positionY = map.transform.position.y
                 });
@@ -170,12 +170,11 @@ public class RenderMapByKey : MonoBehaviour
         List<GameObject> ls = GameObject.FindGameObjectsWithTag("Map").ToList();
 
         // case Position change with Brick and Stone
-        Vector3 ortherPosition = new Vector3(position.x + 0.18f, position.y - 0.04f, position.z);
 
         if (ls.Count() > 0)
         {
             // If exit map
-            if (ls.Where(x => x.transform.position == position || x.transform.position == ortherPosition) != null)
+            if (ls.Where(x => x.transform.position == position) != null)
             {
                 GameObject mapGame = ls.Where(x => x.transform.position == position).FirstOrDefault();
                 return mapGame;
