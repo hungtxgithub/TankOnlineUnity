@@ -5,6 +5,7 @@ using System.Linq;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class RenderMapByKey : MonoBehaviour
 {
@@ -163,6 +164,10 @@ public class RenderMapByKey : MonoBehaviour
 
             SaveFile.Instance.saveFile("Map", lstBsSave);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+        }
     }
 
     public GameObject CheckExitsMap(Vector3 position)
@@ -179,7 +184,7 @@ public class RenderMapByKey : MonoBehaviour
         {
             foreach (GameObject obj in ls)
             {
-                if(obj.transform.position == position || obj.transform.position == vt3 || obj.transform.position == vt1)
+                if (obj.transform.position == position || obj.transform.position == vt3 || obj.transform.position == vt1)
                 {
                     GameObject mapGame = obj;
                     return mapGame;
@@ -204,11 +209,12 @@ public class RenderMapByKey : MonoBehaviour
                 case 3: return 0;
                 default: return 0;
             }
-        } catch(Exception e)
+        }
+        catch (Exception e)
         {
             return 0;
         }
-        
+
     }
 
 }
