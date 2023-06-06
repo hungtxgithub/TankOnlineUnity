@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702738496201198369, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
       propertyPath: m_Name
-      value: Brick3Physic
+      value: Brick3Physic Variant
       objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
       propertyPath: m_RootOrder
@@ -54,22 +54,6 @@ PrefabInstance:
     - target: {fileID: 702738496201198375, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108777795778711759, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945385529801474159, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242017634342862100, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261771956279776159, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
