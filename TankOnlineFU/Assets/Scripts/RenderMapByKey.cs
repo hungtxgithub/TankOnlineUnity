@@ -168,6 +168,14 @@ public class RenderMapByKey : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            if (CheckExitsMap(TankController.Instance.getTank().Position) != null)
+            {
+                GameObject.Destroy(CheckExitsMap(TankController.Instance.getTank().Position));
+
+            }
+        }
     }
 
     public GameObject CheckExitsMap(Vector3 position)
