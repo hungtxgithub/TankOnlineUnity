@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 6351254543050211917}
   - component: {fileID: 6351254543050211916}
   - component: {fileID: 1098713811}
+  - component: {fileID: 4094193663442167350}
   m_Layer: 5
   m_Name: TankItem
   m_TagString: Untagged
@@ -297,6 +298,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4094193663442167350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351254543050211922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bcdb65ff6124741a82213b4b30f0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceLabel: {fileID: 0}
+  mask: {fileID: 0}
+  TankType: 0
 --- !u!1 &8308372921607063449
 GameObject:
   m_ObjectHideFlags: 0
