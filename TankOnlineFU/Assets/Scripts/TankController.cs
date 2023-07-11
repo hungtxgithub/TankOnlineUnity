@@ -34,7 +34,7 @@ public class TankController : MonoBehaviour
     private TankMover _tankMover;
     private CameraController _cameraController;
     private SpriteRenderer _renderer;
-    public new GameObject camera;
+    //public new GameObject camera;
 
     private void Start()
     {
@@ -49,7 +49,7 @@ public class TankController : MonoBehaviour
         };
         gameObject.transform.position = _tank.Position;
         _tankMover = gameObject.GetComponent<TankMover>();
-        _cameraController = camera.GetComponent<CameraController>();
+        //_cameraController = camera.GetComponent<CameraController>();
         _renderer = gameObject.GetComponent<SpriteRenderer>();
         Move(Direction.Down);
     }
