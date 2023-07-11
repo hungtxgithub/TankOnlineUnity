@@ -11,6 +11,7 @@ public class MenuController : MonoBehaviour
     public void Play()
     {
         Logger.Info("Play button clicked");
+        Time.timeScale = 1; // Make sure game is not pause
         SceneManager.LoadScene(playScene);
     }
 

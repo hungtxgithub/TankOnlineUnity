@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlaySenece.unity
     guid: 3d2a84152ee6bee40936cb84a131079f
+  - enabled: 1
+    path: Assets/Scenes/MenuSences2.unity
+    guid: c595ecccfe82aa44b92da4ecc847b76c
   m_configObjects: {}
