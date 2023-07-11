@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     int playScene = 2;
-    int shopScene = 3;
 
     public void Play()
     {
@@ -18,7 +17,6 @@ public class MenuController : MonoBehaviour
     public void Shop()
     {
         Logger.Info("Shop button clicked");
-        SceneManager.LoadScene(shopScene);
     }
 
     public void Exit()
