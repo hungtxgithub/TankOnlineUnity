@@ -75,7 +75,7 @@ public class LoadFile : MonoBehaviour
         }
         catch (Exception e)
         {
-            
+            Logger.Info(e.ToString());
         }
 
     }
