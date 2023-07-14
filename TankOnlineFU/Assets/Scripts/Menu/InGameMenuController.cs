@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenuController : MonoBehaviour
 {
-    int menuScene = 3;
     [SerializeField]
     GameObject panel;
 
@@ -18,7 +17,7 @@ public class InGameMenuController : MonoBehaviour
     public void ExitToMenu()
     {
         Logger.Info("Exit to menu");
-        SceneManager.LoadScene(menuScene);
+        SceneManager.LoadScene(Scene.MenuScene);
     }
 
     public void Continue()

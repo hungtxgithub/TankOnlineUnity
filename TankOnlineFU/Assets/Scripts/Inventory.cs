@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Inventory
 {
-    int money = 0;
-    public TankType SelectedTank;
+    public int Money { get; set; }
     
-    public List<TankType> availableTank = new List<TankType>() ;
+    public TankType SelectedTank;
+    public List<TankType> AvailableTank = new List<TankType>() ;
 
     private static Inventory instance;
 
@@ -22,38 +22,22 @@ public class Inventory
 
     private Inventory()
     {
-        money = 1000;
+        Money = 400;
         SelectedTank = TankType.T90;
-        availableTank.Add(TankType.Default);
-        availableTank.Add(TankType.T90);
-        availableTank.Add(TankType.LazeTank);
-    }
-
-    public int Money
-    {
-        get { return money; }
-    }
-
-    public int AddMoney(int amount)
-    {
-        money += amount;
-        if (money <= 0)
-        {
-            money = 0;
-        }
-        return money;
+        AvailableTank.Add(TankType.Default);
+        AvailableTank.Add(TankType.T90);
     }
 
     public void AddTank(TankType type)
     {
         if (!FindTank(type))
         {
-            availableTank.Add(type);
+            AvailableTank.Add(type);
         }
     }
 
     public bool FindTank(TankType tank)
     {
-        return availableTank.Contains(tank);
+        return AvailableTank.Contains(tank);
     }
 }

@@ -220,7 +220,7 @@ public class RenderMapByKey : MonoBehaviour
         }
         catch (Exception e)
         {
-            Logger.Info(e.Message);
+            Logger.Info(e.ToString());
             return 0;
         }
 

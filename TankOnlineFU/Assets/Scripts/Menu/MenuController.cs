@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    int playScene = 2;
-
     public void Play()
     {
         Logger.Info("Play button clicked");
         Time.timeScale = 1; // Make sure game is not pause
-        SceneManager.LoadScene(playScene);
+        SceneManager.LoadScene(Scene.PlayScene);
     }
 
-    public void Shop()
+    public void PlayContruction()
     {
-        Logger.Info("Shop button clicked");
+        Logger.Info("Play contruction mode");
+        SceneManager.LoadScene(Scene.ContructionScene);
+
     }
 
     public void Exit()
