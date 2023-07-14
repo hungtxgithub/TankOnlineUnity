@@ -10,7 +10,7 @@ public class TankManager : MonoBehaviour
     public void SetTank(string s)
     {
         var type = GetTankType(s);
-        var tanks = inventory.availableTank;
+        var tanks = inventory.AvailableTank;
         if (tanks.Contains(type))
         {
             Logger.Info($"Selected {type} tank");
@@ -28,7 +28,7 @@ public class TankManager : MonoBehaviour
         var tankPrice = GetTankPrice(type);
         if (money >= tankPrice)
         {
-            inventory.AddMoney(tankPrice * -1);
+            inventory.Money += -tankPrice;
             inventory.AddTank(type);
         }
         else
@@ -37,7 +37,7 @@ public class TankManager : MonoBehaviour
         }
     }
 
-    private int GetTankPrice(TankType type)
+    public static int GetTankPrice(TankType type)
     {
         if (type == TankType.T90) return 20;
         if (type == TankType.LazeTank) return 100;
