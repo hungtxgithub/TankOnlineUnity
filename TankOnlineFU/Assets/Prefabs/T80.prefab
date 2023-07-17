@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 3200324079773412155, guid: 41670dfb26cdb7941ac53a53ee41ddab, type: 3}
   shootSpeed: 1
+  AutoMode: 1
   Level: 1
 --- !u!1 &7554416616623084663
 GameObject:
@@ -63,9 +64,10 @@ GameObject:
   - component: {fileID: 7554416616623084670}
   - component: {fileID: 7554416616623084657}
   - component: {fileID: 7554416616623084671}
+  - component: {fileID: 2244409321483298218}
   m_Layer: 0
   m_Name: T80
-  m_TagString: Untagged
+  m_TagString: AIEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +248,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &2244409321483298218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554416616623084663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a96b859154adec488bc803510c22f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIDestinationSetter: {fileID: 7554416616623084671}
 --- !u!1 &7554416617553356599
 GameObject:
   m_ObjectHideFlags: 0

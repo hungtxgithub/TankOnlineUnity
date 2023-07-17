@@ -9,11 +9,18 @@ public class Gun : MonoBehaviour
         One = 1
     }
 
+    
+
     [SerializeField]
     GameObject rocketPrefab;
 
     [SerializeField]
     float shootSpeed = 1;
+
+    [SerializeField]
+    bool AutoMode;
+
+    private float timer;
 
     [SerializeField]
     GunLevel Level = GunLevel.One;
@@ -23,7 +30,25 @@ public class Gun : MonoBehaviour
 	    	
 	}
 
-    public void Fire()
+	private void Update()
+	{
+        if (AutoMode)
+        {
+            ShootAuto();
+        }
+	}
+
+    void ShootAuto()
+    {
+		timer += Time.deltaTime;
+        if (timer >= 1.5f)
+        {
+            timer = 0;
+            Fire();
+        }
+	}
+
+	public void Fire()
     {
         var rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
     }

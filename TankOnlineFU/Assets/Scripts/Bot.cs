@@ -16,16 +16,18 @@ public class Bot : MonoBehaviour
     void Update()
     {
             
-        if (Input.GetMouseButtonDown(0))
-        {
-            AutoFire();   
-        }
+            
     }
 
-    void AutoFire()
-    {
-        gun?.Fire();   
-    }
+	private void FixedUpdate()
+	{
+		
+	}
+
+	//void AutoFire()
+ //   {
+ //       gun?.Fire();   
+ //   }
 
     void MoveHorizontal()
     {
