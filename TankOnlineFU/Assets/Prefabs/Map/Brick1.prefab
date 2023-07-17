@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 564774794716461460, guid: cca0e3fd418c5f74692f5866a9daf9a7, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: BrickCell
       objectReference: {fileID: 0}
     - target: {fileID: 3823414668776661348, guid: cca0e3fd418c5f74692f5866a9daf9a7, type: 3}
       propertyPath: m_RootOrder
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 564774794716461460, guid: cca0e3fd418c5f74692f5866a9daf9a7, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: BrickCell
       objectReference: {fileID: 0}
     - target: {fileID: 3823414668776661348, guid: cca0e3fd418c5f74692f5866a9daf9a7, type: 3}
       propertyPath: m_RootOrder
