@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702738496201198369, guid: 9b9be190258fd69469794733c9edd960, type: 3}
       propertyPath: m_Name
-      value: Brick2Physic
+      value: Brick2Physic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 702738496201198369, guid: 9b9be190258fd69469794733c9edd960, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 9b9be190258fd69469794733c9edd960, type: 3}
       propertyPath: m_RootOrder

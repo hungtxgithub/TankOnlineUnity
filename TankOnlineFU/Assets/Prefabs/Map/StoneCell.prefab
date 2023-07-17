@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7785679829318924501}
   - component: {fileID: 6067330440349198851}
   - component: {fileID: 8621282111105007936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

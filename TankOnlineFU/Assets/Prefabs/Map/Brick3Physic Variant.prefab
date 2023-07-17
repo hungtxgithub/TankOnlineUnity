@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick3Physic Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 702738496201198369, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 15cc2f239c6dd81428833d507aad8f00, type: 3}
       propertyPath: m_RootOrder
       value: 0

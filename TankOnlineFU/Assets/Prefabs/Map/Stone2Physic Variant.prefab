@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702738496201198369, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
       propertyPath: m_Name
-      value: Stone2Physic
+      value: Stone2Physic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 702738496201198369, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
       propertyPath: m_RootOrder
@@ -62,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 5218323692022805753, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557586240144372064, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794673644318149630, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a7f4a1e1722ebc41a078503435de47d, type: 3}

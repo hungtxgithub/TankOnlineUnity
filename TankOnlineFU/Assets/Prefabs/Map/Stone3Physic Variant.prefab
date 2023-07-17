@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702738496201198369, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
       propertyPath: m_Name
-      value: Stone3Physic
+      value: Stone3Physic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 702738496201198369, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
       propertyPath: m_RootOrder
@@ -59,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5412804550081357320, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6306669543886290734, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -66,6 +74,18 @@ PrefabInstance:
     - target: {fileID: 6668310220789547221, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341441734431801385, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993141694789877714, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539813580625192156, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8753280075390212367, guid: 00236add7aa3af64fbb07ad03561ed09, type: 3}
       propertyPath: m_Enabled
