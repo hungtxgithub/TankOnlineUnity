@@ -43,10 +43,11 @@ public class TopUpDiamond
 
                     var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
 
-                    var diamonValue = JsonConvert.DeserializeObject<DiamonModel>(diamon).Diamond;
-                    var diamonNewValue = diamonValue + request.Money;
+                    var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
+                    var diamonUserID = diamonObj.UserID;
+                    var diamonNewValue = diamonObj.Diamond + request.Money;
 
-                    var jsonData = JsonConvert.SerializeObject(new { Diamond = diamonNewValue }, Formatting.Indented);
+                    var jsonData = JsonConvert.SerializeObject(new { UserID = diamonUserID, Diamond = diamonNewValue }, Formatting.Indented);
                     File.WriteAllText(FILE_SAVE_DIAMOND, jsonData);
                 }
             }

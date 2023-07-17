@@ -8,6 +8,7 @@ namespace Assets.Scripts.TopUpDiamond.Models
 {
     public class DiamonModel
     {
+        public string UserID { get; set; }
         public float Diamond { get; set; }
     }
 }

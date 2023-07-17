@@ -1,3 +1,4 @@
+using Assets.Scripts.TopUpDiamond;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,5 +29,10 @@ public class MenuController : MonoBehaviour
     public void TopUpDiamond()
     {
         new TopUpDiamond();
+    }
+
+    public void GetContentTopUp()
+    {
+        new ContentTopUp().GetContentTopUp();
     }
 }
