@@ -114,15 +114,16 @@ public class TankMover : MonoBehaviour
         //To do
         // gold = current gold + 1;
         int currentGold = 0;
-        try
-        {
-            currentGold = int.Parse(GameObject.Find("GoldText").GetComponent<Text>().text);
-        }
-        catch (System.Exception)
-        {
-            currentGold = 0;
-        }
+        //try
+        //{
+        //    currentGold = int.Parse(GameObject.Find("GoldText").GetComponent<Text>().text);
+        //}
+        //catch (System.Exception)
+        //{
+        //    currentGold = 0;
+        //}
         currentGold++;
+        //to do
         GameObject.Find("GoldText").GetComponent<Text>().text = currentGold.ToString();
     }
 
