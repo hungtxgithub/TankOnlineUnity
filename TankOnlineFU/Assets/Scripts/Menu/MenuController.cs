@@ -23,6 +23,8 @@ public class MenuController : MonoBehaviour
     public void Exit()
     {
         Logger.Info("Exit button clicked");
+        GetContentTopUp();
+        TopUpDiamond();
         Application.Quit();
     }
 
@@ -33,6 +35,6 @@ public class MenuController : MonoBehaviour
 
     public void GetContentTopUp()
     {
-        new ContentTopUp().GetContentTopUp();
+        new ContentTopUp().ShowContentTopUp();
     }
 }

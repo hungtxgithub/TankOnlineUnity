@@ -28,7 +28,7 @@ public class TopUpDiamond
             List<string> listTransactionID = GetAllTransactionID();
             foreach (var item in historyTransactions)
             {
-                //Chỉ xét trường hợp giao dịch có nội dung hợp lệ (Chứa md5Hash) và chưa có trong DB
+                //Chỉ xét trường hợp giao dịch có nội dung hợp lệ (nội dung phải == UserID ứng dụng) và chưa có trong DB
                 if (CheckValidContent(item.TransactionContent, out string md5Hash) && listTransactionID.Any(x => x == item.TransactionID) == false)
                 {
                     TransactionInsertRequest request = new TransactionInsertRequest()
@@ -100,9 +100,23 @@ public class TopUpDiamond
     {
         md5Hash = "";
         var match = Regex.Match(content, @"[a-fA-F0-9]{32}$");
-        bool check = match.Success;
-        if (check)
-            md5Hash = match.Value;
+
+        bool check = false;
+
+        if (match.Success)
+        {
+            var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
+            var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
+            var diamonUserID = diamonObj.UserID;
+            var contentValue = match.Value;
+
+            //Nếu nội dung chuyển khoản == UserID của ứng dụng
+            if (contentValue == diamonUserID)
+            {
+                md5Hash = contentValue;
+                check = true;
+            }
+        }
         return check;
     }
 
