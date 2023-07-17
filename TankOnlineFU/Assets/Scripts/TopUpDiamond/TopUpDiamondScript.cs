@@ -17,6 +17,10 @@ public class TopUpDiamondScript : MonoBehaviour
         var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
         GameObject.Find("DiamondValue").GetComponent<TextMeshProUGUI>().text = (diamonObj.Diamond / 1000).ToString().Split(".")[0];
 
+        var gold = File.ReadAllText("Assets/Gold.json");
+        var goldObj = JsonConvert.DeserializeObject<GoldModel>(gold);
+        GameObject.Find("GoldValue").GetComponent<TextMeshProUGUI>().text = goldObj.Gold.ToString();
+
         // Gọi phương thức chạy coroutine
         StartCoroutine(MyAsyncLoop());
     }

@@ -11,4 +11,9 @@ namespace Assets.Scripts.TopUpDiamond.Models
         public string UserID { get; set; }
         public float Diamond { get; set; }
     }
+
+    public class GoldModel
+    {
+        public int Gold { get; set; }
+    }
 }
