@@ -17,6 +17,9 @@ TagManager:
   - Strees
   - Water
   - ImageTopUp
+  - item
+  - BrickCell
+  - StoneCell
   layers:
   - Default
   - TransparentFX
