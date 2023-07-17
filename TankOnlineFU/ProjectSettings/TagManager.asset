@@ -16,6 +16,7 @@ TagManager:
   - Stone3
   - Strees
   - Water
+  - ImageTopUp
   layers:
   - Default
   - TransparentFX

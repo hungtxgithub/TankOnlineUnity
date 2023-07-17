@@ -1,3 +1,4 @@
+using Assets.Scripts.TopUpDiamond;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,18 @@ public class MenuController : MonoBehaviour
     public void Exit()
     {
         Logger.Info("Exit button clicked");
+        new ContentTopUp().ShowContentTopUp();
+        new RefreshTopUp();
         Application.Quit();
+    }
+
+    public void RefreshTopUp()
+    {
+        new RefreshTopUp();
+    }
+
+    public void ShowContentTopUp()
+    {
+        new ContentTopUp().ShowContentTopUp();
     }
 }
