@@ -17,7 +17,7 @@ namespace Assets.Scripts.TopUpDiamond
 
         public void ShowContentTopUp()
         {
-            var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
+            var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
             var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
             var diamonUserID = diamonObj.UserID;
             var diamonValue = diamonObj.Diamond;

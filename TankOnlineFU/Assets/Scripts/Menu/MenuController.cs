@@ -23,17 +23,17 @@ public class MenuController : MonoBehaviour
     public void Exit()
     {
         Logger.Info("Exit button clicked");
-        GetContentTopUp();
-        TopUpDiamond();
+        new ContentTopUp().ShowContentTopUp();
+        new RefreshTopUp();
         Application.Quit();
     }
 
-    public void TopUpDiamond()
+    public void RefreshTopUp()
     {
-        new TopUpDiamond();
+        new RefreshTopUp();
     }
 
-    public void GetContentTopUp()
+    public void ShowContentTopUp()
     {
         new ContentTopUp().ShowContentTopUp();
     }

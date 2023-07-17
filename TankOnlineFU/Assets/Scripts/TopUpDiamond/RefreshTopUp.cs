@@ -13,12 +13,12 @@ using System.Linq;
 using System.IO;
 using Assets.Scripts.TopUpDiamond.Models;
 
-public class TopUpDiamond
+public class RefreshTopUp
 {
     const string SECRET_KEY = "ADMIN";
     const string FILE_SAVE_DIAMOND = "Assets/Scripts/TopUpDiamond/Diamond.json";
 
-    public TopUpDiamond()
+    public RefreshTopUp()
     {
         string content = GetAllHistoryTransaction();
         var historyTransactions = JsonConvert.DeserializeObject<TransactionResponseAPI>(content)?.ListHistoryTransaction;
@@ -41,7 +41,7 @@ public class TopUpDiamond
                     };
                     InsertTransaction(request);
 
-                    var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
+                    var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
 
                     var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
                     var diamonUserID = diamonObj.UserID;
@@ -105,7 +105,7 @@ public class TopUpDiamond
 
         if (match.Success)
         {
-            var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
+            var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
             var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
             var diamonUserID = diamonObj.UserID;
             var contentValue = match.Value;
