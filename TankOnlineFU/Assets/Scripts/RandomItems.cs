@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class RandomItems : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     List<GameObject> ls;
-
-    private int maximum = 0;
 
     float timer = 0f;
     float delay = 10f; // D?ng 60 giây
@@ -23,7 +21,7 @@ public class RandomItems : MonoBehaviour
         {
             // Th?c hi?n hành ??ng c?a b?n ? ?ây
             Instantiate(random(), new Vector2(Random.Range(-11, 11), Random.Range(-4, 4)), Quaternion.identity);
-
+            
             // Reset timer
             timer = 0f;
         }
