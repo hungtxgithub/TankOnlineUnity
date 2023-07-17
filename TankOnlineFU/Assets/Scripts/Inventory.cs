@@ -22,10 +22,11 @@ public class Inventory
 
     private Inventory()
     {
-        Money = 400;
-        SelectedTank = TankType.T90;
-        AvailableTank.Add(TankType.Default);
-        AvailableTank.Add(TankType.T90);
+        Money = 10000;
+        SelectedTank = TankType.Default;
+        //SelectedTank = TankType.T90;
+       //AvailableTank.Add(TankType.Default);
+        //AvailableTank.Add(TankType.T90);
     }
 
     public void AddTank(TankType type)

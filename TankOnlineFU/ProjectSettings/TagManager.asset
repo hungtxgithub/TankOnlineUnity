@@ -17,6 +17,7 @@ TagManager:
   - Strees
   - Water
   - ImageTopUp
+  - TopUpDiamondTag
   layers:
   - Default
   - TransparentFX

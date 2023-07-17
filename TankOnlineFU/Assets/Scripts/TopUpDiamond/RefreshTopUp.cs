@@ -12,6 +12,7 @@ using UnityEngine;
 using System.Linq;
 using System.IO;
 using Assets.Scripts.TopUpDiamond.Models;
+using UnityEngine.UI;
 
 public class RefreshTopUp
 {
@@ -49,6 +50,8 @@ public class RefreshTopUp
 
                     var jsonData = JsonConvert.SerializeObject(new { UserID = diamonUserID, Diamond = diamonNewValue }, Formatting.Indented);
                     File.WriteAllText(FILE_SAVE_DIAMOND, jsonData);
+
+                    GameObject.Find("DiamondValue").GetComponent<Text>().text = (diamonNewValue / 1000).ToString().Split(",")[0];
                 }
             }
         }
