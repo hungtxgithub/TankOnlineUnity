@@ -6,14 +6,13 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 
-string HistoryFilePath = GetAppSettings("HistoryFilePath");
 string SECRET_KEY = GetAppSettings("SECRET_KEY");
 
 HttpClient client = new();
 
 while (true)
 {
-    string content = File.ReadAllText(HistoryFilePath);
+    string content = GetAllHistoryTransaction();
     var historyTransactions = JsonConvert.DeserializeObject<TransactionResponseAPI>(content)?.ListHistoryTransaction;
     if (historyTransactions != null)
     {
@@ -46,6 +45,15 @@ List<string> GetAllTransactionID()
     var jsonString = response.Content.ReadAsStringAsync().Result;
 
     return JsonConvert.DeserializeObject<List<string>>(jsonString);
+}
+
+string GetAllHistoryTransaction()
+{
+    var client = new HttpClient();
+    var response = client.GetAsync("https://api.thanhtoan247.xyz/api/PRU221mControllers/GetAllHistoryTransaction?SecretKey=" + SECRET_KEY).Result;
+    var jsonString = response.Content.ReadAsStringAsync().Result;
+
+    return jsonString;
 }
 
 string InsertTransaction(TransactionInsertRequest requestData)

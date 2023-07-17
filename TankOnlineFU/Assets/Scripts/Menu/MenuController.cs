@@ -24,4 +24,9 @@ public class MenuController : MonoBehaviour
         Logger.Info("Exit button clicked");
         Application.Quit();
     }
+
+    public void TopUpDiamond()
+    {
+        new TopUpDiamond();
+    }
 }

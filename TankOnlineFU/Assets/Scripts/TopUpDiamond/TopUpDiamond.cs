@@ -1,4 +1,4 @@
-using CheckBotRecharge.Models;
+﻿using CheckBotRecharge.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -9,24 +9,58 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Text;
 using UnityEngine;
+using System.Linq;
+using System.IO;
+using Assets.Scripts.TopUpDiamond.Models;
 
-public class NewBehaviourScript : MonoBehaviour
+public class TopUpDiamond
 {
-    string HistoryFilePath = GetAppSettings("HistoryFilePath");
-    string SECRET_KEY = GetAppSettings("SECRET_KEY");
+    const string SECRET_KEY = "ADMIN";
+    const string FILE_SAVE_DIAMOND = "Assets/Scripts/TopUpDiamond/Diamond.json";
 
-    // Start is called before the first frame update
-    void Start()
+    public TopUpDiamond()
     {
+        string content = GetAllHistoryTransaction();
+        var historyTransactions = JsonConvert.DeserializeObject<TransactionResponseAPI>(content)?.ListHistoryTransaction;
+        if (historyTransactions != null)
+        {
+            //Gọi API GetAllTransactionID
+            List<string> listTransactionID = GetAllTransactionID();
+            foreach (var item in historyTransactions)
+            {
+                //Chỉ xét trường hợp giao dịch có nội dung hợp lệ (Chứa md5Hash) và chưa có trong DB
+                if (CheckValidContent(item.TransactionContent, out string md5Hash) && listTransactionID.Any(x => x == item.TransactionID) == false)
+                {
+                    TransactionInsertRequest request = new TransactionInsertRequest()
+                    {
+                        SecretKey = SECRET_KEY,
+                        Money = float.Parse(item.Money),
+                        TransactionContent = item.TransactionContent,
+                        TransactionTime = ConvertSringToDateTime(item.TransactionTime, "dd/MM/yyyy"),
+                        UserID = md5Hash
+                    };
+                    InsertTransaction(request);
 
+                    var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
+
+                    var diamonValue = JsonConvert.DeserializeObject<DiamonModel>(diamon).Diamond;
+                    var diamonNewValue = diamonValue + request.Money;
+
+                    var jsonData = JsonConvert.SerializeObject(new { Diamond = diamonNewValue }, Formatting.Indented);
+                    File.WriteAllText(FILE_SAVE_DIAMOND, jsonData);
+                }
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    string GetAllHistoryTransaction()
     {
+        var client = new HttpClient();
+        var response = client.GetAsync("https://api.thanhtoan247.xyz/api/PRU221mControllers/GetAllHistoryTransaction?SecretKey=" + SECRET_KEY).Result;
+        var jsonString = response.Content.ReadAsStringAsync().Result;
 
+        return jsonString;
     }
-
 
     List<string> GetAllTransactionID()
     {
@@ -44,8 +78,8 @@ public class NewBehaviourScript : MonoBehaviour
 
         var requestContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
 
-        client.DefaultRequestHeaders.Accept.Clear();
-        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
+        //client.DefaultRequestHeaders.Accept.Clear();
+        //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
         //client.DefaultRequestHeaders.Add("Authorization", "admin");
 
         var response = client.PostAsync(apiUrl, requestContent).Result;
@@ -75,11 +109,5 @@ public class NewBehaviourScript : MonoBehaviour
     {
         DateTime result = DateTime.ParseExact(datetime, pattern, CultureInfo.InvariantCulture);
         return result;
-    }
-
-    static string GetAppSettings(string key)
-    {
-        //return new ConfigurationBuilder().AddJsonFile("appsettings.json").Build()[key];
-        return "";
     }
 }

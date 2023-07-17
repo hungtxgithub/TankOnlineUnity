@@ -19,4 +19,5 @@ namespace CheckBotRecharge.Models
         public string LastUpdate { get; set; }
         public List<HistoryTransaction> ListHistoryTransaction { get; set; }
     }
+
 }
