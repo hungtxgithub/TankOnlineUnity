@@ -12,6 +12,7 @@ public class SaveFile : MonoBehaviour
 
     private Dictionary<string, List<MapData>> dic = new Dictionary<string, List<MapData>>();
 
+
     public static SaveFile Instance
     {
         get
@@ -27,11 +28,22 @@ public class SaveFile : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        if (!File.Exists(Application.dataPath + "/savefile.json"))
-        {
-            using (FileStream fs = File.Create(Application.dataPath + "/savefile.json")) { fs.Close(); }
-        }
     }
+
+    // Save file
+    public void saveFileGold(int gold)
+    {
+        string json = JsonConvert.SerializeObject(gold);
+        File.WriteAllText("Assets/Gold.json", json);
+    }
+
+    // Load file
+    public int loadFileGold()
+    {
+        string json = File.ReadAllText("Assets/Gold.json");
+        return JsonConvert.DeserializeObject<int>(json);
+    }
+    
 
     // Save file
     public void saveFile(string keySave, List<MapData> ls)
@@ -45,15 +57,17 @@ public class SaveFile : MonoBehaviour
         }
 
         string json = JsonConvert.SerializeObject(dic);
-        File.WriteAllText("savefile.json", json);
+        File.WriteAllText("Assets/SaveFile.json", json);
     }
 
     // Load file
     public List<MapData> loadFile()
     {
-        string json = File.ReadAllText("savefile.json");
+        string json = File.ReadAllText("Assets/SaveFile.json");
         dic = JsonConvert.DeserializeObject<Dictionary<string, List<MapData>>>(json);
 
         return dic["Map"];
     }
+
+
 }
