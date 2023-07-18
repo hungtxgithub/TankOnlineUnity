@@ -100,13 +100,4 @@ public class TankManager : MonoBehaviour
         if (s == TankType.GoldenTank.ToString()) return TankType.GoldenTank;
         return TankType.Default;
     }
-
-    public static TankType GetTankType(int s)
-    {
-        if (s == (int)TankType.Default) return TankType.Default;
-        if (s == (int)TankType.T90) return TankType.T90;
-        if (s == (int)TankType.LazeTank) return TankType.LazeTank;
-        if (s == (int)TankType.GoldenTank) return TankType.GoldenTank;
-        return TankType.Default;
-    }
 }

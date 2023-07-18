@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour
 	public void Play()
     {
         Logger.Info("Play button clicked");
-        SceneManager.LoadScene(Scene.PlayScene);
+        SceneManager.LoadScene(Scene.ListMapScene);
     }
 
     public void PlaySolo()

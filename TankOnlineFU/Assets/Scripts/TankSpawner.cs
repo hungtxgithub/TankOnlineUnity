@@ -1,4 +1,3 @@
-using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -23,10 +22,8 @@ public class TankSpawner : MonoBehaviour
 
     private void SpawnerPlayer()
     {
-        var type = TankManager.GetTankType(Common.GetTankFromJson().TankSelected);
-        Logger.Info("-------: " + type);
-        var tank = PlayerTank[(int)type];
-        Logger.Info("-------: " + tank);
+        var type = Inventory.GetInstance().SelectedTank;
+        var tank = PlayerTank[(int) type];
         GameObject.Instantiate<GameObject>(tank);
     }
 }

@@ -35,7 +35,7 @@ public class LoadFile : MonoBehaviour
     {
         try
         {
-            List<MapData> datas = SaveFile.Instance.loadFile();
+            List<MapData> datas = SaveFile.Instance.loadFile(StateMapName.mapName);
             foreach (MapData data in datas)
             {
                 switch (data.objectType)
