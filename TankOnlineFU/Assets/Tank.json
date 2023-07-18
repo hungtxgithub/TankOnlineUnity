@@ -1,4 +1,9 @@
 {
-  "TankOwned": [],
+  "TankOwned": [
+    0,
+    1,
+    3,
+    2
+  ],
   "TankSelected": 0
 }

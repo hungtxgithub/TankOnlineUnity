@@ -2166,8 +2166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTank:
   - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
-  - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
-  - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+  - {fileID: 2185695495001854551, guid: dae727c1dc3c9b54294a62035e20ba66, type: 3}
+  - {fileID: 2185695495001854551, guid: 53335eca653bb964eb613dde3398805c, type: 3}
   - {fileID: 2185695495001854551, guid: bd2a0fbfa8acb284a9f3cfb98e161adf, type: 3}
 --- !u!4 &1769330311
 Transform:
@@ -2687,6 +2687,10 @@ PrefabInstance:
     - target: {fileID: 7554416616623084663, guid: 4b3780774d0169d449a0553c6040967b, type: 3}
       propertyPath: m_Name
       value: T80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554416616623084663, guid: 4b3780774d0169d449a0553c6040967b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7554416616623084671, guid: 4b3780774d0169d449a0553c6040967b, type: 3}
       propertyPath: target
