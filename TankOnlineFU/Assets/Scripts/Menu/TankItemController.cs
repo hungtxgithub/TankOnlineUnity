@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TankItemController : MonoBehaviour
 {
-    public TextMeshProUGUI priceLabel;
     public GameObject mask;
     public TankType TankType;
     private bool OwnTank = false;
@@ -16,12 +15,10 @@ public class TankItemController : MonoBehaviour
         if (!OwnTank)
         {
             OwnTank = tankTypes.Contains(TankType);
-            priceLabel.text = TankManager.GetTankPrice(TankType) + "";
         }
 
         if (OwnTank)
         {
-            priceLabel.text = "";
             mask?.SetActive(false);
         }
     }

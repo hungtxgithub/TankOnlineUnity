@@ -23,6 +23,9 @@ TagManager:
   - BrickCell
   - TopUpDiamond
   - AIEnemy
+  - BuyedTank1
+  - BuyedTank2
+  - BuyedTank3
   layers:
   - Default
   - TransparentFX
