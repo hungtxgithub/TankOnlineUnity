@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5890403737551327434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7397194341192008660, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7397194341192008660, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: currenthHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 658675345, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 658675346, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: tankUp
+      value: 
+      objectReference: {fileID: 21300000, guid: eb251f101311cf7469fa38f96e6d9260, type: 3}
+    - target: {fileID: 658675346, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: tankDown
+      value: 
+      objectReference: {fileID: 21300000, guid: b2171e51e5cebbd4395940452d2710bf, type: 3}
+    - target: {fileID: 658675346, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: tankLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fe1cba84200c0c4ba025b6df48b7980, type: 3}
+    - target: {fileID: 658675346, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: tankRight
+      value: 
+      objectReference: {fileID: 21300000, guid: d87a93fbfe9aa9f45af921034b80ae03, type: 3}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: delay
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: maxRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: spriteUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 5da2523c599e86e4593eeb8820a17b66, type: 3}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: spriteDown
+      value: 
+      objectReference: {fileID: 21300000, guid: 5da2523c599e86e4593eeb8820a17b66, type: 3}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: spriteLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: 7740ac3fd762b3b48a1be28fdc272f2b, type: 3}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: spriteRight
+      value: 
+      objectReference: {fileID: 21300000, guid: 7740ac3fd762b3b48a1be28fdc272f2b, type: 3}
+    - target: {fileID: 711902216727361652, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6835606872764314994, guid: 7450a266efb9bcf46b7796c60e756b3a, type: 3}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5960999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3477
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072091300885886469, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425215670684244316, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb251f101311cf7469fa38f96e6d9260, type: 3}
+    - target: {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Name
+      value: LazeTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067813049247871571, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986146953576889094, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2093576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986146953576889094, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.29943383
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986146953576889094, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0018204972
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986146953576889094, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0027060807
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}

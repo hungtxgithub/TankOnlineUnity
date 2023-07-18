@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7c87d9c94ca9242945d06690e89b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currenthHealth: 5
+  maxHealth: 6
+  currenthHealth: 6
   isPlayer: 0
   hasShield: 0
 --- !u!50 &7554416616623084668
