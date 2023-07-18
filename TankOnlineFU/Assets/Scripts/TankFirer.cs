@@ -16,7 +16,6 @@ namespace DefaultNamespace
         public int maxRange;
         public float delay;
         public float lastFire = 0f;
-        public bool bulletEffect { get; set; }
 
         private void Start()
         {
@@ -35,7 +34,6 @@ namespace DefaultNamespace
             }
 
             bulletPrefab.GetComponent<BulletController>().bulletExplosionTarget = TankPlayer;
-            bulletPrefab.GetComponent<BulletController>().bulletEffect = bulletEffect;
 
             var bullet = Instantiate(bulletPrefab, b.InitialPosition, Quaternion.identity);
             var sr = bullet.GetComponent<SpriteRenderer>();
