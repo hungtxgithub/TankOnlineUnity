@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9.7
+  health: {fileID: -7397194341192008660}
   shield_2: {fileID: 2609302248049121701}
 --- !u!114 &658675346
 MonoBehaviour:
