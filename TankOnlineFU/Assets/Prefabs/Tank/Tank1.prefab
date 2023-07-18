@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 5067813049247871571}
   - component: {fileID: 3973139886239168266}
   m_Layer: 0
-  m_Name: Tank Player
+  m_Name: Tank1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,8 +322,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2185695495001854551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 1.465, y: 0.513, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4178975105680200448}
@@ -372,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5961b410be50c40db80d4336eb9ba4f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9453ddfeca8c43b4db977116d7cacd8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -412,10 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d734fd77aae440649442faa0a890101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankUp: {fileID: 21300000, guid: c2500d85418f749429defd72247fa182, type: 3}
-  tankDown: {fileID: 21300000, guid: 5961b410be50c40db80d4336eb9ba4f6, type: 3}
-  tankLeft: {fileID: 21300000, guid: 13bdef6e50b2c4a339bafdc7f7f58ff4, type: 3}
-  tankRight: {fileID: 21300000, guid: f59f1eac0661d4c9ba950e0e5d444b6d, type: 3}
+  tankUp: {fileID: 21300000, guid: 9453ddfeca8c43b4db977116d7cacd8f, type: 3}
+  tankDown: {fileID: 21300000, guid: ab4acb2ac5e89a344a655fdceaf3dece, type: 3}
+  tankLeft: {fileID: 21300000, guid: f4f88905802587d499d0a5891f8ceac9, type: 3}
+  tankRight: {fileID: 21300000, guid: 7e0c0f6418c78be41bddfa62c457c98f, type: 3}
 --- !u!114 &711902216727361652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,18 +472,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000008940697, y: 0.06571627}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.0522647, y: 2.141274}
   m_EdgeRadius: 0
 --- !u!114 &-7397194341192008660
 MonoBehaviour:

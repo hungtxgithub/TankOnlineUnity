@@ -12,7 +12,7 @@ public class WallBrickController : MonoBehaviour
     {
         var tag = collision.tag;
         var bulletObject = collision.gameObject;
-        if ((tag == "bullet" || tag == "bulletEnemy") && isEffect)
+        if ((tag == "bullet" && isEffect) || tag == "bulletEnemy")
         {
             HP--;
             Destroy(bulletObject);
