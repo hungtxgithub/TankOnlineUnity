@@ -46,7 +46,7 @@ public class TankController1 : MonoBehaviour
             Hp = 10,
             Point = 0,
             Position = new Vector3(Random.Range(0, 2), Random.Range(0, 2), 0),
-            Guid = GUID.Generate()
+            Guid = new System.Guid()
         };
         gameObject.transform.position = _tank.Position;
         _tankMover = gameObject.GetComponent<TankMover>();

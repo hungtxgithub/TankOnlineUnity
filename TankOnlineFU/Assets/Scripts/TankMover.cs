@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
 using DefaultNamespace;
@@ -9,8 +7,6 @@ using UnityEngine;
 
 public class TankMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float speed;
 
     Timer timePowerUp;
@@ -22,6 +18,10 @@ public class TankMover : MonoBehaviour
     int currentGold;
 
     public GameObject shield_2;
+
+    public AudioSource speedSound;
+    public AudioSource shieldSound;
+
     void Start()
     {
         timePowerUp = gameObject.AddComponent<Timer>();
@@ -96,6 +96,7 @@ public class TankMover : MonoBehaviour
                 //Debug.Log("PowerUp");
                 if (!timePowerUp.checkRunning())
                 {
+                    speedSound?.Play(); // Play sound
                     SetPowerUp(true);
                     timePowerUp.Run();
                 }
@@ -124,6 +125,7 @@ public class TankMover : MonoBehaviour
                 //Debug.Log("Shield");
                 if (!timeShield.checkRunning())
                 {
+                    shieldSound?.Play();    // Play sound
                     SetShield(true);
                     timeShield.Run();
                 }

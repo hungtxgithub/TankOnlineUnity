@@ -1,4 +1,4 @@
-using UnityEditor;
+using System;
 using UnityEngine;
 
 namespace Entity
@@ -12,7 +12,8 @@ namespace Entity
         public int Point { get; set; }
         public int Hp { get; set; }
 
-        public GUID Guid { get; set; }
+        public Guid Guid { get; set; }
+
         public Vector3 Position { get; set; }
 
         public void Move(float x, float y)
