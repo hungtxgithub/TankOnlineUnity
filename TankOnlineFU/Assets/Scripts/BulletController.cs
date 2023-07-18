@@ -29,7 +29,26 @@ public class BulletController : MonoBehaviour
         DestroyAfterRange();
     }
 
-    private void DestroyAfterRange()
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		OnCollisionWithTank(collision);
+	}
+
+	private void OnCollisionWithTank(Collider2D collider)
+	{
+		var health = collider.gameObject.GetComponent<Health>();
+		if (health != null)
+		{
+			health.TakeDamage(1);
+			Destroy(gameObject);
+		}
+	}
+
+	private void DestroyAfterRange()
     {
         var currentPos = gameObject.transform.position;
         var initPos = Bullet.InitialPosition;

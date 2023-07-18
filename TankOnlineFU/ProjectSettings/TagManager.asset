@@ -18,6 +18,11 @@ TagManager:
   - Water
   - ImageTopUp
   - TopUpDiamondTag
+  - StoneCell
+  - item
+  - BrickCell
+  - TopUpDiamond
+  - AIEnemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +32,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Blocking
   - 
   - 
   - 

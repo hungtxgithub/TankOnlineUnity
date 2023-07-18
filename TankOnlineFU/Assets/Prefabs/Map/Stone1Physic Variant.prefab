@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 702738496201198369, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
       propertyPath: m_Name
-      value: Stone1Physic
+      value: Stone1Physic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 702738496201198369, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 702738496201198375, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
       propertyPath: m_RootOrder
@@ -54,6 +58,14 @@ PrefabInstance:
     - target: {fileID: 702738496201198375, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763656634877720229, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889209807399326401, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7925388685837102534, guid: 5f374d98dc2e1bf4685dbe5217e5148c, type: 3}
       propertyPath: m_Enabled

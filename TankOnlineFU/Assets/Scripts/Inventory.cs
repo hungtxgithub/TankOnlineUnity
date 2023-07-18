@@ -24,9 +24,7 @@ public class Inventory
     {
         Money = 10000;
         SelectedTank = TankType.Default;
-        //SelectedTank = TankType.T90;
-       //AvailableTank.Add(TankType.Default);
-        //AvailableTank.Add(TankType.T90);
+        AvailableTank.Add(TankType.Default);
     }
 
     public void AddTank(TankType type)

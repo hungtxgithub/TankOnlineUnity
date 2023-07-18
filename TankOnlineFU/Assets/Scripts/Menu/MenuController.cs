@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public void Play()
+
+	private void Start()
+	{
+        Time.timeScale = 1; // Make sure game is not pause
+	}
+
+	public void Play()
     {
         Logger.Info("Play button clicked");
-        Time.timeScale = 1; // Make sure game is not pause
         SceneManager.LoadScene(Scene.PlayScene);
     }
 

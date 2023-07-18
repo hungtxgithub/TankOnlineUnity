@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7082998416786707704, guid: e5c3492fea94d644a9b15d1a2541f40c, type: 3}
       propertyPath: m_Name
-      value: WaterPhysic
+      value: WaterPhysic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082998416786707704, guid: e5c3492fea94d644a9b15d1a2541f40c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5c3492fea94d644a9b15d1a2541f40c, type: 3}

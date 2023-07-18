@@ -1,5 +1,6 @@
 ﻿using DefaultNamespace;
 using Entity;
+using Pathfinding;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -52,6 +53,7 @@ public class TankController : MonoBehaviour
         //_cameraController = camera.GetComponent<CameraController>();
         _renderer = gameObject.GetComponent<SpriteRenderer>();
         Move(Direction.Down);
+        ShootMe();
     }
 
     private void FixedUpdate()
@@ -129,5 +131,15 @@ public class TankController : MonoBehaviour
     public Tank getTank()
     {
         return _tank;
+    }
+
+    public void ShootMe()
+    {
+        var enemies = GameObject.FindGameObjectsWithTag("AIEnemy");
+        if (enemies == null) return;
+        foreach(var e in enemies)
+        {
+            e.GetComponent<AIDestinationSetter>().target = transform;
+        }
     }
 }
