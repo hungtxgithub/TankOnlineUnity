@@ -15,10 +15,5 @@ public class WallSteelController : MonoBehaviour
             var bulletObject = collision.gameObject;
             Destroy(bulletObject);
         }
-
-        if (tag.EndsWith("Item"))
-        {
-            Destroy(collision.gameObject);
-        }
     }
 }
