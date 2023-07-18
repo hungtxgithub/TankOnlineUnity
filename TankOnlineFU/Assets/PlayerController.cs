@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
-		gameOverPanel.SetActive(false);
+		gameOverPanel?.SetActive(false);
 	}
 
 

@@ -27,7 +27,6 @@ public class Rocket : MonoBehaviour
 	{
 		// Collision with tank
 		OnCollisionWithTank(collision.gameObject);
-		Destroy(gameObject);
 	}
 
 	private void OnCollisionWithTank(GameObject tank)
@@ -36,6 +35,7 @@ public class Rocket : MonoBehaviour
 		if (health != null && !health.hasShield)
 		{
 			health.TakeDamage(1);
+			Destroy(gameObject);
 		}
 	}
 }
