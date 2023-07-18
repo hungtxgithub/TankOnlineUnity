@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlaySeneceSolo.unity
     guid: 092780c6cedc50c4bbd8e60765b0410f
+  - enabled: 1
+    path: Assets/Scenes/ListMap.unity
+    guid: 98ca2724542df0548bc3b5e0580e39f8
   m_configObjects: {}

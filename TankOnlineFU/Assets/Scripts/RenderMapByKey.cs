@@ -166,7 +166,7 @@ public class RenderMapByKey : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+            SceneManager.LoadScene(Scene.MenuScene);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha7))
         {
