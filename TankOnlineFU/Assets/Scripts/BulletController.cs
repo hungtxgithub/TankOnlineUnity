@@ -42,9 +42,15 @@ public class BulletController : MonoBehaviour
 	private void OnCollisionWithTank(Collider2D collider)
 	{
 		var health = collider.gameObject.GetComponent<Health>();
-		if (health != null && bulletExplosionTarget.name != collider.name)
+        var haveshield = collider.gameObject.GetComponent<TankMover>()?.shield_2.activeInHierarchy;
+
+        if (health != null && bulletExplosionTarget.name != collider.name )
 		{
-			health.TakeDamage(1);
+            if (haveshield == false)
+            {
+			    health.TakeDamage(1);
+            }
+
 			Destroy(gameObject);
 		}
 	}

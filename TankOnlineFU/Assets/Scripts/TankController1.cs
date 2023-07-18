@@ -137,7 +137,7 @@ public class TankController1 : MonoBehaviour
     {
         var enemies = GameObject.FindGameObjectsWithTag("AIEnemy");
         if (enemies == null) return;
-        foreach(var e in enemies)
+        foreach (var e in enemies)
         {
             e.GetComponent<AIDestinationSetter>().target = transform;
         }
