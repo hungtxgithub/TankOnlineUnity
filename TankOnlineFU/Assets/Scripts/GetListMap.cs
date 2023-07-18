@@ -28,25 +28,8 @@ public class GetListMap : MonoBehaviour
             child.transform.SetParent(parent);
             child.transform.position = new Vector2(960, y);
             y = y - 80;
-            // Text textComponent= child.GetComponentInChildren<GameObject>().GetComponentInChildren<Text>();
-            // textComponent.text = map;
+            child.transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = map;
             Button btn = child.GetComponentInChildren<Button>();
-            // if (btn != null)
-            // {
-            //     GameObject textComponent = child.GetComponentInChildren<GameObject>().GetComponentInChildren<GameObject>();
-            //     if (textComponent != null)
-            //     {
-            //         btn.text = map;
-            //     }
-            //     else
-            //     {
-            //         Debug.LogError("Text component not found in child of Button.");
-            //     }
-            // }
-            // else
-            // {
-            //     Debug.LogError("Button component not found in child.");
-            // }
             btn.onClick.AddListener(() => Play(map));
         }
     }
