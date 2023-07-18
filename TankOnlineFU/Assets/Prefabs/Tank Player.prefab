@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52482f72ca442e6b3880f73fb4f360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   health: {fileID: -7397194341192008660}
   shield_2: {fileID: 2609302248049121701}
   speedSound: {fileID: 1293786959}

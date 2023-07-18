@@ -13,9 +13,12 @@ public class BulletController : MonoBehaviour
     public GameObject bulletExplosionTarget;
     public int MaxRange { get; set; }
 
+    public bool bulletEffect { get; set; }
+
     // Start is called before the first frame update
     private void Start()
     {
+        bulletEffect = true;
     }
 
     private void OnDestroy()

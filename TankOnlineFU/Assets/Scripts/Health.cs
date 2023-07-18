@@ -1,3 +1,5 @@
+using Assets.Scripts;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,10 +46,17 @@ public class Health : MonoBehaviour
 	}
 
 	private IEnumerator Death()
-	{
-		// Clean up some resource
-		// ...
-		yield return new WaitForSeconds(0.5f);
+ 	{
+		if(gameObject.tag == "Player")
+		{
+            TankMover tankMover = gameObject.GetComponent<TankMover>();
+            int sumGold = Common.GetGoldFromJson().Gold + tankMover.getGoldAfterPlay();
+            var jsonData = JsonConvert.SerializeObject(new { Gold = sumGold });
+            Common.InsertGoldToJson(jsonData);
+        }
+        // Clean up some resource
+        // ...
+        yield return new WaitForSeconds(0.5f);
 		// Destory object
 		Destroy(gameObject);
 	}

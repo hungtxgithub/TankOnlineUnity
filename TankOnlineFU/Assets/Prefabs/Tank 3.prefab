@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52482f72ca442e6b3880f73fb4f360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   health: {fileID: 0}
   shield_2: {fileID: 2609302248049121701}
   speedSound: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 6783b99fa46ad430680016ebeb8ea713, type: 3}
   spriteUp: {fileID: 21300000, guid: 27a8e2e75693e4e69ade2de1a9ac6ce3, type: 3}
   spriteDown: {fileID: 21300000, guid: c809315d9e24d474ba994bee424cf98c, type: 3}
-  speed: 8
+  speed: 5
   maxRange: 10
   delay: 0.2
   lastFire: 0
