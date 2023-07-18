@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,7 @@ public class ShopController : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1; // Make sure not pause 
+        Common.ShowTankShop();
     }
 
     // Update is called once per frame

@@ -1,25 +1,26 @@
 using Assets.Scripts;
 using Assets.Scripts.TopUpDiamond.Models;
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class TankManager : MonoBehaviour
 {
-    private readonly Inventory inventory = Inventory.GetInstance();
-
     public void SetTank(string s)
     {
         var type = GetTankType(s);
-        var tanks = inventory.AvailableTank;
-        if (tanks.Contains(type))
+        var tanks = Common.GetTankFromJson();
+        if (tanks.TankOwned.Contains(Convert.ToInt32(type)))
         {
             Logger.Info($"Selected {type} tank");
-            inventory.SelectedTank = type;
+            var jsonData = JsonConvert.SerializeObject(new { tanks.TankOwned, TankSelected = Convert.ToInt32(type) }, Formatting.Indented);
+            Common.InsertTankToJson(jsonData);
         } else
         {
             BuyTank(type);
@@ -42,6 +43,16 @@ public class TankManager : MonoBehaviour
                 var jsonData = JsonConvert.SerializeObject(new { UserID = diamonUserID, Diamond = diamonNewValue }, Formatting.Indented);
                 Common.InsertDiamonToJson(jsonData);
                 Common.ShowDiamonToUI();
+
+                var tank = Common.GetTankFromJson();
+                tank.TankOwned.Add(Convert.ToInt32(TankType.GoldenTank));
+
+                var tanks = Common.GetTankFromJson();
+                tanks.TankOwned.Add(Convert.ToInt32(type));
+                var jsonTank = JsonConvert.SerializeObject(new { tanks.TankOwned, tanks.TankSelected }, Formatting.Indented);
+                Common.InsertTankToJson(jsonTank);
+
+                Common.ShowTank(type);
                 Logger.Info($"BuyTank success!");
             }
             else
@@ -58,8 +69,18 @@ public class TankManager : MonoBehaviour
             {
                 var goldNewValue = goldObj.Gold - tankPrice;
                 var jsonData = JsonConvert.SerializeObject(new { Gold = goldNewValue }, Formatting.Indented);
-                Common.InsertDiamonToJson(jsonData);
+                Common.InsertGoldToJson(jsonData);
                 Common.ShowGoldToUI();
+
+                var tank = Common.GetTankFromJson();
+                tank.TankOwned.Add(Convert.ToInt32(TankType.GoldenTank));
+
+                var tanks = Common.GetTankFromJson();
+                tanks.TankOwned.Add(Convert.ToInt32(type));
+                var jsonTank = JsonConvert.SerializeObject(new { tanks.TankOwned, tanks.TankSelected }, Formatting.Indented);
+                Common.InsertTankToJson(jsonTank);
+
+                Common.ShowTank(type);
                 Logger.Info($"BuyTank success!");
                 //inventory.AddTank(type);
             }
@@ -78,7 +99,7 @@ public class TankManager : MonoBehaviour
         return 0;
     }
 
-    private TankType GetTankType(string s)
+    public static TankType GetTankType(string s)
     {
         if (s == TankType.Default.ToString()) return TankType.Default;
         if (s == TankType.T90.ToString()) return TankType.T90;
