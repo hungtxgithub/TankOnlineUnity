@@ -14,21 +14,26 @@ public class Rocket : MonoBehaviour
 	private void Start()
 	{
 		rb2D = GetComponent<Rigidbody2D>();
-		//var force = new Vector2(-1 * Speed, 0);
 		var force = transform.up * Speed;
 		rb2D.AddForce(force, ForceMode2D.Impulse);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		// Collision with tank
-		OnCollisionWithTank(collision);
+		
 	}
 
-	private void OnCollisionWithTank(Collision2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		var health = collision.gameObject.GetComponent<Health>();
-		if (health != null)
+		// Collision with tank
+		OnCollisionWithTank(collision.gameObject);
+		Destroy(gameObject);
+	}
+
+	private void OnCollisionWithTank(GameObject tank)
+	{
+		var health = tank.GetComponent<Health>();
+		if (health != null && !health.hasShield)
 		{
 			health.TakeDamage(1);
 		}

@@ -23,6 +23,7 @@ TagManager:
   - BrickCell
   - TopUpDiamond
   - AIEnemy
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX

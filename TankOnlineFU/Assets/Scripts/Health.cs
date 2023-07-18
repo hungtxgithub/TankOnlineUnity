@@ -13,11 +13,15 @@ public class Health : MonoBehaviour
 	[SerializeField]
 	private bool isPlayer;
 
+	public bool hasShield = false;
+
 	Rigidbody2D rb2D;
+	AudioSource audio;
 
 	private void Start()
 	{
 		rb2D = GetComponent<Rigidbody2D>();
+		audio = GetComponent<AudioSource>();
 	}
 
 	private void SetHealth()
@@ -28,13 +32,14 @@ public class Health : MonoBehaviour
 	public void TakeDamage(int damage = 1)
 	{
 		currenthHealth -= damage;
+		
+		audio?.Play();
 
 		if (currenthHealth <= 0)
 		{
 			StartCoroutine(Death());
 
 			rb2D.velocity = Vector3.zero;
-			//gameObject.GetComponent<Bot>().ToFreezeTank();
 		}
 	}
 
