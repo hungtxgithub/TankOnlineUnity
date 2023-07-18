@@ -27,7 +27,6 @@ public class MenuController : MonoBehaviour
     {
         Logger.Info("Play contruction mode");
         SceneManager.LoadScene(Scene.ContructionScene);
-
     }
 
     public void Exit()

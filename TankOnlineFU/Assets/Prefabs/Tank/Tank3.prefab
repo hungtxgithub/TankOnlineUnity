@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 5067813049247871571}
   - component: {fileID: 3973139886239168266}
   m_Layer: 0
-  m_Name: Tank2
+  m_Name: Tank3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7ed20cfff8659c4899f149d4e5c935b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 872fba75b24f08646913f3446e3a25ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52482f72ca442e6b3880f73fb4f360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   health: {fileID: -7397194341192008660}
   shield_2: {fileID: 2609302248049121701}
   speedSound: {fileID: 1293786959}
@@ -412,10 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d734fd77aae440649442faa0a890101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankUp: {fileID: 21300000, guid: e7ed20cfff8659c4899f149d4e5c935b, type: 3}
-  tankDown: {fileID: 21300000, guid: 0121bbfa02d57a44f841ae99c865fdd7, type: 3}
-  tankLeft: {fileID: 21300000, guid: ff29cb3ddaae1f8439ab278459763e34, type: 3}
-  tankRight: {fileID: 21300000, guid: 622194c81b54ebe4e8b1079fef70083e, type: 3}
+  tankUp: {fileID: 21300000, guid: 872fba75b24f08646913f3446e3a25ac, type: 3}
+  tankDown: {fileID: 21300000, guid: 6b0ac2749175c2d4ba61b3e0285aa81a, type: 3}
+  tankLeft: {fileID: 21300000, guid: 3436f1d37a3494041967b806fcbe6d4b, type: 3}
+  tankRight: {fileID: 21300000, guid: 23101478ca70d804b9b3557ba1c698e9, type: 3}
 --- !u!114 &711902216727361652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 6783b99fa46ad430680016ebeb8ea713, type: 3}
   spriteUp: {fileID: 21300000, guid: 27a8e2e75693e4e69ade2de1a9ac6ce3, type: 3}
   spriteDown: {fileID: 21300000, guid: c809315d9e24d474ba994bee424cf98c, type: 3}
-  speed: 12
+  speed: 13
   maxRange: 10
   delay: 0.2
   lastFire: 0
@@ -472,7 +472,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026420474, y: -0.029193223}
+  m_Offset: {x: 0.026420504, y: -0.1413374}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -483,7 +483,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9153247, y: 2.3310928}
+  m_Size: {x: 1.8096642, y: 2.1068044}
   m_EdgeRadius: 0
 --- !u!114 &-7397194341192008660
 MonoBehaviour:
@@ -497,8 +497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7c87d9c94ca9242945d06690e89b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
-  currenthHealth: 12
+  maxHealth: 15
+  currenthHealth: 15
   isPlayer: 0
   hasShield: 0
 --- !u!82 &5067813049247871571
