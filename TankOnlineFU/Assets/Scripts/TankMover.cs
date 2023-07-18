@@ -183,7 +183,7 @@ public class TankMover : MonoBehaviour
 
     private void SetShield(bool type)
     {
-        shield_2.SetActive(true);
+        shield_2.SetActive(type);
 
         if (!type)
         {
