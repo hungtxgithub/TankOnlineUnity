@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,4 +30,10 @@ public class InGameMenuController : MonoBehaviour
         Time.timeScale = 0;
         panel.SetActive(true);
     }
+
+    public void Retry()
+    {
+		Logger.Info("Retry button clicked");
+		SceneManager.LoadScene(Scene.PlayScene);
+	}
 }

@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Entity;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
     public Bullet Bullet { get; set; }
     public GameObject bulletExplosion;
-
+    
     public GameObject bulletExplosionTarget;
     public int MaxRange { get; set; }
 
@@ -41,10 +42,23 @@ public class BulletController : MonoBehaviour
 
 	private void OnCollisionWithTank(Collider2D collider)
 	{
+        var isPlayer = collider.gameObject.tag == "Player";
+        
+        if (isPlayer)
+        {
+            return;
+        }
+
 		var health = collider.gameObject.GetComponent<Health>();
-		if (health != null && bulletExplosionTarget.name != collider.name)
+        //var haveshield = collider.gameObject.GetComponent<TankMover>()?.shield_2.activeInHierarchy;
+        
+        if (health != null)
 		{
-			health.TakeDamage(1);
+            if (!health.hasShield)
+            {
+			    health.TakeDamage(1);
+            }
+
 			Destroy(gameObject);
 		}
 	}

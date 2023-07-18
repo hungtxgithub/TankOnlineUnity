@@ -18,6 +18,11 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene(Scene.PlayScene);
     }
 
+    public void PlaySolo()
+    {
+        SceneManager.LoadScene(Scene.TwoPlayerScene);
+    }
+
     public void PlayContruction()
     {
         Logger.Info("Play contruction mode");
