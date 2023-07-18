@@ -16,4 +16,10 @@ namespace Assets.Scripts.TopUpDiamond.Models
     {
         public int Gold { get; set; }
     }
+
+    public class TankModel
+    {
+        public List<int> TankOwned { get; set; }
+        public int TankSelected { get; set; }
+    }
 }
