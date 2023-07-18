@@ -103,8 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52482f72ca442e6b3880f73fb4f360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9.7
+  speed: 5
+  health: {fileID: 0}
   shield_2: {fileID: 2609302248049121701}
+  speedSound: {fileID: 0}
+  shieldSound: {fileID: 0}
 --- !u!114 &711902216727361652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +192,7 @@ MonoBehaviour:
   maxHealth: 5
   currenthHealth: 0
   isPlayer: 0
+  hasShield: 0
 --- !u!114 &-2030665809149407858
 MonoBehaviour:
   m_ObjectHideFlags: 0
