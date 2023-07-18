@@ -13,12 +13,9 @@ namespace Assets.Scripts.TopUpDiamond
 {
     public class ContentTopUp
     {
-        const string FILE_SAVE_DIAMOND = "Assets/Scripts/TopUpDiamond/Diamond.json";
-
         public void ShowContentTopUp()
         {
-            var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
-            var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
+            var diamonObj = Common.GetDiamonFromJson();
             var diamonUserID = diamonObj.UserID;
             var diamonValue = diamonObj.Diamond;
 
@@ -26,7 +23,7 @@ namespace Assets.Scripts.TopUpDiamond
             {
                 var userID = MD5Hash(Guid.NewGuid().ToString());
                 var jsonData = JsonConvert.SerializeObject(new { UserID = userID, Diamond = diamonValue }, Formatting.Indented);
-                File.WriteAllText(FILE_SAVE_DIAMOND, jsonData);
+                File.WriteAllText(Constant.FILE_SAVE_DIAMOND, jsonData);
                 DownloadImageFromUrl(ConvertToQR(userID));
             }
             else

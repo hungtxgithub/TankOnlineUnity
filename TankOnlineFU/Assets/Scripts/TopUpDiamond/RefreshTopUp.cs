@@ -13,11 +13,11 @@ using System.Linq;
 using System.IO;
 using Assets.Scripts.TopUpDiamond.Models;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 public class RefreshTopUp
 {
-    const string SECRET_KEY = "ADMIN";
-    const string FILE_SAVE_DIAMOND = "Assets/Scripts/TopUpDiamond/Diamond.json";
+    public const string SECRET_KEY = "ADMIN";
 
     public RefreshTopUp()
     {
@@ -42,14 +42,12 @@ public class RefreshTopUp
                     };
                     InsertTransaction(request);
 
-                    var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
-
-                    var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
+                    var diamonObj = Common.GetDiamonFromJson();
                     var diamonUserID = diamonObj.UserID;
                     var diamonNewValue = diamonObj.Diamond + request.Money;
 
                     var jsonData = JsonConvert.SerializeObject(new { UserID = diamonUserID, Diamond = diamonNewValue }, Formatting.Indented);
-                    File.WriteAllText(FILE_SAVE_DIAMOND, jsonData);
+                    Common.InsertDiamonToJson(jsonData);
 
                     GameObject.Find("DiamondValue").GetComponent<Text>().text = (diamonNewValue / 1000).ToString().Split(",")[0];
                 }
@@ -108,8 +106,7 @@ public class RefreshTopUp
 
         if (match.Success)
         {
-            var diamon = File.ReadAllText(FILE_SAVE_DIAMOND);
-            var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
+            var diamonObj = Common.GetDiamonFromJson();
             var diamonUserID = diamonObj.UserID;
             var contentValue = match.Value;
 

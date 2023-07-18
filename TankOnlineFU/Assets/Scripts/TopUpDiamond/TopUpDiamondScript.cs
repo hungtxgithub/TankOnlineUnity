@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.TopUpDiamond.Models;
+﻿using Assets.Scripts;
+using Assets.Scripts.TopUpDiamond.Models;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,13 +14,8 @@ public class TopUpDiamondScript : MonoBehaviour
 
     void Start()
     {
-        var diamon = File.ReadAllText("Assets/Scripts/TopUpDiamond/Diamond.json");
-        var diamonObj = JsonConvert.DeserializeObject<DiamonModel>(diamon);
-        GameObject.Find("DiamondValue").GetComponent<TextMeshProUGUI>().text = (diamonObj.Diamond / 1000).ToString().Split(".")[0];
-
-        var gold = File.ReadAllText("Assets/Gold.json");
-        var goldObj = JsonConvert.DeserializeObject<GoldModel>(gold);
-        GameObject.Find("GoldValue").GetComponent<TextMeshProUGUI>().text = goldObj.Gold.ToString();
+        Common.ShowDiamonToUI();
+        Common.ShowGoldToUI();
 
         // Gọi phương thức chạy coroutine
         StartCoroutine(MyAsyncLoop());
