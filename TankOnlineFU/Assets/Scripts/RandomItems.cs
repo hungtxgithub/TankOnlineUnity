@@ -20,7 +20,7 @@ public class RandomItems : MonoBehaviour
         if (timer > delay)
         {
             // Th?c hi?n hành ??ng c?a b?n ? ?ây
-            Instantiate(random(), new Vector2(Random.Range(-11, 11), Random.Range(-4, 4)), Quaternion.identity);
+            Instantiate(random(), new Vector2(Random.Range(-8, 8), Random.Range(-4.5f, 4.5f)), Quaternion.identity);
             
             // Reset timer
             timer = 0f;
