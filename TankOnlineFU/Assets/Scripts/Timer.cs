@@ -46,6 +46,16 @@ public class Timer : MonoBehaviour
         return running;
     }
 
+    public float GetElapsedSeconds()
+    {
+        return elapsedSeconds;
+    }
+
+    public void SetElapsedSeconds(float value)
+    {
+        elapsedSeconds = value;
+    }
+
     public bool Finished
     {
         get => started && !running;

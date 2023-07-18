@@ -15,14 +15,22 @@ public class TankMover : MonoBehaviour
 
     Timer timePowerUp;
     Timer timeRokect;
+    Timer timeShield;
 
+    int currentGold;
+
+    public GameObject shield_2;
     void Start()
     {
         timePowerUp = gameObject.AddComponent<Timer>();
         timeRokect = gameObject.AddComponent<Timer>();
+        timeShield = gameObject.AddComponent<Timer>();
 
         timePowerUp.Duration = 5;
         timeRokect.Duration = 5;
+        timeShield.Duration = 5;
+
+        currentGold = 0;
     }
 
     // Update is called once per frame
@@ -30,12 +38,17 @@ public class TankMover : MonoBehaviour
     {
         if (timePowerUp.Finished)
         {
-            PowerUp(false);
+            SetPowerUp(false);
         }
 
         if (timeRokect.Finished)
         {
-            Rocket(true);
+            SetRocket(true);
+        }
+
+        if (timeShield.Finished)
+        {
+            SetShield(false);
         }
     }
 
@@ -67,38 +80,55 @@ public class TankMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
         switch (collision.name)
         {
-            case "Gold":
-            case "Gold(Clone)":
-                Debug.Log("Gold");
+            case "GoldItem":
+            case "GoldItem(Clone)":
+                //Debug.Log("Gold");
                 UpdateGold();
                 Destroy(collision.gameObject);
                 break;
-            case "PowerUp":
-            case "PowerUp(Clone)":
-                Debug.Log("PowerUp");
+            case "PowerUpItem":
+            case "PowerUpItem(Clone)":
+                //Debug.Log("PowerUp");
                 if (!timePowerUp.checkRunning())
                 {
-                    PowerUp(true);
+                    SetPowerUp(true);
                     timePowerUp.Run();
                 }
-                Destroy(collision.gameObject);
-                break;
-            case "Rocket":
-            case "Rocket(Clone)":
-                Debug.Log("Rocket");
-                if (!timeRokect.checkRunning())
+                else
                 {
-                    Rocket(false);
-                    timeRokect.Run();
+                    timePowerUp.SetElapsedSeconds(timePowerUp.GetElapsedSeconds() + 5);
                 }
                 Destroy(collision.gameObject);
                 break;
-            case "Shield":
-            case "Shield(Clone)":
-                Debug.Log("Shield");
+            case "RocketItem":
+            case "RocketItem(Clone)":
+                //Debug.Log("Rocket");
+                if (!timeRokect.checkRunning())
+                {
+                    SetRocket(false);
+                    timeRokect.Run();
+                }
+                else
+                {
+                    timeRokect.SetElapsedSeconds(timeRokect.GetElapsedSeconds() + 5);
+                }
+                Destroy(collision.gameObject);
+                break;
+            case "ShieldItem":
+            case "ShieldItem(Clone)":
+                //Debug.Log("Shield");
+                if (!timeShield.checkRunning())
+                {
+                    SetShield(true);
+                    timeShield.Run();
+                }
+                else
+                {
+                    timeShield.SetElapsedSeconds(timeShield.GetElapsedSeconds() + 5);
+                }
                 Destroy(collision.gameObject);
                 break;
             default:
@@ -111,23 +141,12 @@ public class TankMover : MonoBehaviour
 
     private void UpdateGold()
     {
-        //To do
-        // gold = current gold + 1;
-        int currentGold = 0;
-        //try
-        //{
-        //    currentGold = int.Parse(GameObject.Find("GoldText").GetComponent<Text>().text);
-        //}
-        //catch (System.Exception)
-        //{
-        //    currentGold = 0;
-        //}
         currentGold++;
         //to do
         GameObject.Find("GoldText").GetComponent<Text>().text = currentGold.ToString();
     }
 
-    private void PowerUp(bool type)
+    private void SetPowerUp(bool type)
     {
         //To do
         // Update x2 dame;
@@ -148,7 +167,7 @@ public class TankMover : MonoBehaviour
     }
 
 
-    private void Rocket(bool type)
+    private void SetRocket(bool type)
     {
         //To do
         // b?n xuyên ??a hình;
@@ -160,6 +179,16 @@ public class TankMover : MonoBehaviour
             timePowerUp.Stop();
         }
 
+    }
+
+    private void SetShield(bool type)
+    {
+        shield_2.SetActive(true);
+
+        if (!type)
+        {
+            timeShield.Stop();
+        }
     }
 
 }

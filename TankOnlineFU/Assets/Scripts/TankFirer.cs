@@ -6,6 +6,7 @@ namespace DefaultNamespace
 {
     public class TankFirer : MonoBehaviour
     {
+        public GameObject TankPlayer;
         public GameObject bulletPrefab;
         public Sprite spriteRight;
         public Sprite spriteLeft;
@@ -31,6 +32,8 @@ namespace DefaultNamespace
             {
                 return;
             }
+
+            bulletPrefab.GetComponent<BulletController>().bulletExplosionTarget = TankPlayer;
 
             var bullet = Instantiate(bulletPrefab, b.InitialPosition, Quaternion.identity);
             var sr = bullet.GetComponent<SpriteRenderer>();

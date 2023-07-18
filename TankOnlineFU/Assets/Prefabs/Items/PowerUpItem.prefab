@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8582231958654068407}
   - component: {fileID: 2443032794033955647}
-  - component: {fileID: 6934597068548666101}
+  - component: {fileID: -5370059066022157375}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: PowerUpItem
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a4cddd763a0a4e40bc217fba67a84b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e73f7c192f744a72b9321a989f09657, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6934597068548666101
+--- !u!61 &-5370059066022157375
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0071207657, y: 0.009977696}
+  m_Offset: {x: 0.0002823174, y: 0.0011760518}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,5 +109,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1206191, y: 0.07055715}
+  m_Size: {x: 0.3157915, y: 0.2968846}
   m_EdgeRadius: 0

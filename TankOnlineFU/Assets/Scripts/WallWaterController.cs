@@ -1,21 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
-public class WallSteelController : MonoBehaviour
+public class WallWaterController : MonoBehaviour
 {
-
-    public bool isEffect = true;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var tag = collision.tag;
-        if ((tag == "bullet" || tag == "bulletEnemy") && isEffect)
-        {
-            var bulletObject = collision.gameObject;
-            Destroy(bulletObject);
-        }
-
         if (tag.EndsWith("Item"))
         {
             Destroy(collision.gameObject);
