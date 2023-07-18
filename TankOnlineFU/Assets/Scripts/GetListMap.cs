@@ -14,6 +14,9 @@ public class GetListMap : MonoBehaviour
     [SerializeField]
     public GameObject gameObjectMaps;
     public Transform parent;
+    public Text mapNameItems;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +27,44 @@ public class GetListMap : MonoBehaviour
 
             child.transform.SetParent(parent);
             child.transform.position = new Vector2(960, y);
-            y = y - 75;
-            child.GetComponentInChildren<GameObject>().GetComponentInChildren<Text>().text=  map;
-            //Button btn = child.GetComponentInChildren<Button>().onClick.AddListener(() => ButtonClicked(42));
+            y = y - 80;
+            // Text textComponent= child.GetComponentInChildren<GameObject>().GetComponentInChildren<Text>();
+            // textComponent.text = map;
+            Button btn = child.GetComponentInChildren<Button>();
+            // if (btn != null)
+            // {
+            //     GameObject textComponent = child.GetComponentInChildren<GameObject>().GetComponentInChildren<GameObject>();
+            //     if (textComponent != null)
+            //     {
+            //         btn.text = map;
+            //     }
+            //     else
+            //     {
+            //         Debug.LogError("Text component not found in child of Button.");
+            //     }
+            // }
+            // else
+            // {
+            //     Debug.LogError("Button component not found in child.");
+            // }
+            btn.onClick.AddListener(() => Play(map));
         }
+    }
+    void Play(string name)
+    {
+        StateMapName.mapName = name;
+        Logger.Info("Play button clicked");
+        SceneManager.LoadScene(Scene.PlayScene);
+    }
+    void Choose()
+    {
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
 
     }
 }

@@ -72,13 +72,13 @@ public class SaveFile : MonoBehaviour
 
         return dic[mapName];
     }
-    public List<MapData> loadFile()
-    {
-        string json = File.ReadAllText("Assets/SaveFile.json");
-        dic = JsonConvert.DeserializeObject<Dictionary<string, List<MapData>>>(json);
+    // public List<MapData> loadFile()
+    // {
+    //     string json = File.ReadAllText("Assets/SaveFile.json");
+    //     dic = JsonConvert.DeserializeObject<Dictionary<string, List<MapData>>>(json);
 
-        return dic["Map"];
-    }
+    //     return dic["Map"];
+    // }
     public List<string> loadListKeys()
     {
         string json = File.ReadAllText("Assets/SaveFile.json");
