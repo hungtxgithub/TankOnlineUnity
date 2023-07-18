@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
     public Bullet Bullet { get; set; }
     public GameObject bulletExplosion;
 
+    public GameObject bulletExplosionTarget;
     public int MaxRange { get; set; }
 
     // Start is called before the first frame update
@@ -41,7 +42,7 @@ public class BulletController : MonoBehaviour
 	private void OnCollisionWithTank(Collider2D collider)
 	{
 		var health = collider.gameObject.GetComponent<Health>();
-		if (health != null)
+		if (health != null && bulletExplosionTarget.name != collider.name)
 		{
 			health.TakeDamage(1);
 			Destroy(gameObject);

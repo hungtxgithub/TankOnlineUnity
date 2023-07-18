@@ -120,15 +120,14 @@ public class TankMover : MonoBehaviour
             case "ShieldItem":
             case "ShieldItem(Clone)":
                 //Debug.Log("Shield");
-                SetShield(true);
-                if (!timeRokect.checkRunning())
+                if (!timeShield.checkRunning())
                 {
-                    SetRocket(false);
-                    timeRokect.Run();
+                    SetShield(true);
+                    timeShield.Run();
                 }
                 else
                 {
-                    timeRokect.SetElapsedSeconds(timeRokect.GetElapsedSeconds() + 5);
+                    timeShield.SetElapsedSeconds(timeShield.GetElapsedSeconds() + 5);
                 }
                 Destroy(collision.gameObject);
                 break;
@@ -188,7 +187,7 @@ public class TankMover : MonoBehaviour
 
         if (!type)
         {
-            timePowerUp.Stop();
+            timeShield.Stop();
         }
     }
 

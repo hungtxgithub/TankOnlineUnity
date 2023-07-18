@@ -5,17 +5,17 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class TankController : MonoBehaviour
+public class TankController1 : MonoBehaviour
 {
 
-    private static TankController instance;
-    public static TankController Instance
+    private static TankController1 instance;
+    public static TankController1 Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = new GameObject().AddComponent<TankController>();
+                instance = new GameObject().AddComponent<TankController1>();
             }
             return instance;
         }
@@ -66,28 +66,28 @@ public class TankController : MonoBehaviour
         float width = renderer.bounds.size.x;
         float height = renderer.bounds.size.y;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.LeftArrow))
         {
             if (transform.position.x - width / 2 > minX)
             {
                 Move(Direction.Left);
             }
         }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.K) || Input.GetKey(KeyCode.DownArrow))
         {
             if (transform.position.y - height / 2 > minY)
             {
                 Move(Direction.Down);
             }
         }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.RightArrow))
         {
             if (transform.position.x + width / 2 < maxX)
             {
                 Move(Direction.Right);
             }
         }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.UpArrow))
         {
             if (transform.position.y + height / 2 < maxY)
             {
@@ -96,7 +96,7 @@ public class TankController : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.M))
         {
             Fire();
         }
@@ -141,10 +141,5 @@ public class TankController : MonoBehaviour
         {
             e.GetComponent<AIDestinationSetter>().target = transform;
         }
-    }
-
-    public static implicit operator TankController(TankController1 v)
-    {
-        throw new System.NotImplementedException();
     }
 }

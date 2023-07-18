@@ -21,7 +21,7 @@ public class RandomItems : MonoBehaviour
         {
             // Th?c hi?n hành ??ng c?a b?n ? ?ây
             Instantiate(random(), new Vector2(Random.Range(-8, 8), Random.Range(-4.5f, 4.5f)), Quaternion.identity);
-            
+
             // Reset timer
             timer = 0f;
         }
@@ -31,5 +31,6 @@ public class RandomItems : MonoBehaviour
     {
         return ls[Random.Range(0, ls.Count)];
     }
+    
 
 }

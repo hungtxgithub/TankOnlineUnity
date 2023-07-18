@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23512406054bfebb417dfedf21e7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TankPlayer: {fileID: 0}
   bulletPrefab: {fileID: 7740309687340280598, guid: 1eaa100cee44c4f839e12948bcb5c44a, type: 3}
   spriteRight: {fileID: 21300000, guid: 0056577ff2e9ad0459ee34b9ba5460c2, type: 3}
   spriteLeft: {fileID: 21300000, guid: 3ccca33e7cf287f4fa7a9baa2ab40e23, type: 3}
