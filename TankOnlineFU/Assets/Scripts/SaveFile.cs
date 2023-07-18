@@ -37,14 +37,6 @@ public class SaveFile : MonoBehaviour
         File.WriteAllText("Assets/Gold.json", json);
     }
 
-    // Load file
-    public int loadFileGold()
-    {
-        string json = File.ReadAllText("Assets/Gold.json");
-        return JsonConvert.DeserializeObject<int>(json);
-    }
-    
-
     // Save file
     public void saveFile(string keySave, List<MapData> ls)
     {

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
-    public TextMeshProUGUI money;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +20,5 @@ public class ShopController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        money.text = Inventory.GetInstance().Money.ToString();    
     }
 }
