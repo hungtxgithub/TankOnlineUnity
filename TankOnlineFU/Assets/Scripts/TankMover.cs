@@ -158,13 +158,13 @@ public class TankMover : MonoBehaviour
         int currentSpeedFirer = GameObject.FindWithTag("Player").GetComponent<TankFirer>().speed;
         if (type)
         {
-            GameObject.FindWithTag("Player").GetComponent<TankMover>().speed = currentSpeedTank * 2;
-            GameObject.FindWithTag("Player").GetComponent<TankFirer>().speed = currentSpeedFirer * 3;
+            GameObject.FindWithTag("Player").GetComponent<TankMover>().speed = currentSpeedTank + 1.5f;
+            GameObject.FindWithTag("Player").GetComponent<TankFirer>().speed = currentSpeedFirer + 3;
         }
         else
         {
-            GameObject.FindWithTag("Player").GetComponent<TankMover>().speed = currentSpeedTank / 2;
-            GameObject.FindWithTag("Player").GetComponent<TankFirer>().speed = currentSpeedFirer / 3;
+            GameObject.FindWithTag("Player").GetComponent<TankMover>().speed = currentSpeedTank - 1.5f;
+            GameObject.FindWithTag("Player").GetComponent<TankFirer>().speed = currentSpeedFirer - 3;
 
             timePowerUp.Stop();
         }
@@ -172,15 +172,17 @@ public class TankMover : MonoBehaviour
 
 
     private void SetRocket(bool type)
-    {
+     {
         //To do
         // b?n xuyên ??a hình;
-        GameObject.FindGameObjectsWithTag("BrickCell").ToList().ForEach(x => x.GetComponent<WallBrickController>().isEffect = type);
-        GameObject.FindGameObjectsWithTag("StoneCell").ToList().ForEach(x => x.GetComponent<WallSteelController>().isEffect = type);
+        //GameObject.FindGameObjectsWithTag("BrickCell").ToList().ForEach(x => x.GetComponent<WallBrickController>().isEffect = type);
+        //GameObject.FindGameObjectsWithTag("StoneCell").ToList().ForEach(x => x.GetComponent<WallSteelController>().isEffect = type);
+
+        gameObject.GetComponent<TankFirer>().bulletEffect = type;
 
         if (type)
         {
-            timePowerUp.Stop();
+            timeRokect.Stop();
         }
 
     }
@@ -194,6 +196,11 @@ public class TankMover : MonoBehaviour
         {
             timeShield.Stop();
         }
+    }
+
+    public int getGoldAfterPlay()
+    {
+        return currentGold;
     }
 
 }
