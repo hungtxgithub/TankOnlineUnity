@@ -15,15 +15,20 @@ public class TankMover : MonoBehaviour
 
     Timer timePowerUp;
     Timer timeRokect;
+    Timer timeShield;
 
     int currentGold;
+
+    public GameObject shield_2;
     void Start()
     {
         timePowerUp = gameObject.AddComponent<Timer>();
         timeRokect = gameObject.AddComponent<Timer>();
+        timeShield = gameObject.AddComponent<Timer>();
 
         timePowerUp.Duration = 5;
         timeRokect.Duration = 5;
+        timeShield.Duration = 5;
 
         currentGold = 0;
     }
@@ -33,12 +38,17 @@ public class TankMover : MonoBehaviour
     {
         if (timePowerUp.Finished)
         {
-            PowerUp(false);
+            SetPowerUp(false);
         }
 
         if (timeRokect.Finished)
         {
-            Rocket(true);
+            SetRocket(true);
+        }
+
+        if (timeShield.Finished)
+        {
+            SetShield(false);
         }
     }
 
@@ -84,14 +94,12 @@ public class TankMover : MonoBehaviour
                 //Debug.Log("PowerUp");
                 if (!timePowerUp.checkRunning())
                 {
-                    PowerUp(true);
+                    SetPowerUp(true);
                     timePowerUp.Run();
                 }
                 else
                 {
-                    Debug.Log("tc: " + timePowerUp.GetElapsedSeconds());
                     timePowerUp.SetElapsedSeconds(timePowerUp.GetElapsedSeconds() + 5);
-                    Debug.Log("sau: " + timePowerUp.GetElapsedSeconds());
                 }
                 Destroy(collision.gameObject);
                 break;
@@ -100,20 +108,28 @@ public class TankMover : MonoBehaviour
                 //Debug.Log("Rocket");
                 if (!timeRokect.checkRunning())
                 {
-                    Rocket(false);
+                    SetRocket(false);
                     timeRokect.Run();
                 }
                 else
                 {
-                    Debug.Log("tc: " + timePowerUp.GetElapsedSeconds());
                     timeRokect.SetElapsedSeconds(timeRokect.GetElapsedSeconds() + 5);
-                    Debug.Log("sau: " + timePowerUp.GetElapsedSeconds());
                 }
                 Destroy(collision.gameObject);
                 break;
             case "ShieldItem":
             case "ShieldItem(Clone)":
                 //Debug.Log("Shield");
+                SetShield(true);
+                if (!timeRokect.checkRunning())
+                {
+                    SetRocket(false);
+                    timeRokect.Run();
+                }
+                else
+                {
+                    timeRokect.SetElapsedSeconds(timeRokect.GetElapsedSeconds() + 5);
+                }
                 Destroy(collision.gameObject);
                 break;
             default:
@@ -131,7 +147,7 @@ public class TankMover : MonoBehaviour
         GameObject.Find("GoldText").GetComponent<Text>().text = currentGold.ToString();
     }
 
-    private void PowerUp(bool type)
+    private void SetPowerUp(bool type)
     {
         //To do
         // Update x2 dame;
@@ -152,7 +168,7 @@ public class TankMover : MonoBehaviour
     }
 
 
-    private void Rocket(bool type)
+    private void SetRocket(bool type)
     {
         //To do
         // b?n xuyên ??a hình;
@@ -164,6 +180,16 @@ public class TankMover : MonoBehaviour
             timePowerUp.Stop();
         }
 
+    }
+
+    private void SetShield(bool type)
+    {
+        shield_2.SetActive(true);
+
+        if (!type)
+        {
+            timePowerUp.Stop();
+        }
     }
 
 }
