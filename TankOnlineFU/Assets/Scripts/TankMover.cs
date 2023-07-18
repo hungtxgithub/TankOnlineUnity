@@ -17,6 +17,8 @@ public class TankMover : MonoBehaviour
     Timer timeRokect;
     Timer timeShield;
 
+    public Health health;
+
     int currentGold;
 
     public GameObject shield_2;
@@ -183,6 +185,7 @@ public class TankMover : MonoBehaviour
 
     private void SetShield(bool type)
     {
+        health.hasShield = type;
         shield_2.SetActive(type);
 
         if (!type)

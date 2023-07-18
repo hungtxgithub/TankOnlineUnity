@@ -23,6 +23,10 @@ TagManager:
   - BrickCell
   - TopUpDiamond
   - AIEnemy
+  - GameOverPanel
+  - TankOwned1
+  - TankOwned2
+  - TankOwned3
   layers:
   - Default
   - TransparentFX

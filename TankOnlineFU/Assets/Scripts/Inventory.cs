@@ -1,13 +1,12 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory
 {
-    public int Money { get; set; }
-    
     public TankType SelectedTank;
-    public List<TankType> AvailableTank = new List<TankType>() ;
+    public List<TankType> AvailableTank = new List<TankType>();
 
     private static Inventory instance;
 
@@ -22,21 +21,12 @@ public class Inventory
 
     private Inventory()
     {
-        Money = 10000;
-        SelectedTank = TankType.Default;
-        AvailableTank.Add(TankType.Default);
-    }
+        var tank = Common.GetTankFromJson();
 
-    public void AddTank(TankType type)
-    {
-        if (!FindTank(type))
+        SelectedTank = TankManager.GetTankType(tank.TankSelected.ToString());
+        foreach (var item in tank.TankOwned)
         {
-            AvailableTank.Add(type);
+            AvailableTank.Add(TankManager.GetTankType(item.ToString()));
         }
-    }
-
-    public bool FindTank(TankType tank)
-    {
-        return AvailableTank.Contains(tank);
     }
 }
