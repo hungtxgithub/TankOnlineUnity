@@ -10,7 +10,7 @@ public class WallBrickController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("a");
+        //print("a");
         var tag = collision.tag;
         var bulletObject = collision.gameObject;
         if ((tag == "bullet" || tag == "bulletEnemy") && isEffect)

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8582231958654068407}
   - component: {fileID: 2443032794033955647}
-  - component: {fileID: -5370059066022157375}
+  - component: {fileID: -619384215374781950}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: RocketItem
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e73f7c192f744a72b9321a989f09657, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 995e90ea29067434b9d415f0815ba3da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-5370059066022157375
+--- !u!61 &-619384215374781950
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

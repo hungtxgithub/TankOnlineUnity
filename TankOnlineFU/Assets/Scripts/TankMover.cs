@@ -16,6 +16,7 @@ public class TankMover : MonoBehaviour
     Timer timePowerUp;
     Timer timeRokect;
 
+    int currentGold;
     void Start()
     {
         timePowerUp = gameObject.AddComponent<Timer>();
@@ -23,6 +24,8 @@ public class TankMover : MonoBehaviour
 
         timePowerUp.Duration = 5;
         timeRokect.Duration = 5;
+
+        currentGold = 0;
     }
 
     // Update is called once per frame
@@ -67,38 +70,50 @@ public class TankMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
         switch (collision.name)
         {
-            case "Gold":
-            case "Gold(Clone)":
-                Debug.Log("Gold");
+            case "GoldItem":
+            case "GoldItem(Clone)":
+                //Debug.Log("Gold");
                 UpdateGold();
                 Destroy(collision.gameObject);
                 break;
-            case "PowerUp":
-            case "PowerUp(Clone)":
-                Debug.Log("PowerUp");
+            case "PowerUpItem":
+            case "PowerUpItem(Clone)":
+                //Debug.Log("PowerUp");
                 if (!timePowerUp.checkRunning())
                 {
                     PowerUp(true);
                     timePowerUp.Run();
                 }
+                else
+                {
+                    Debug.Log("tc: " + timePowerUp.GetElapsedSeconds());
+                    timePowerUp.SetElapsedSeconds(timePowerUp.GetElapsedSeconds() + 5);
+                    Debug.Log("sau: " + timePowerUp.GetElapsedSeconds());
+                }
                 Destroy(collision.gameObject);
                 break;
-            case "Rocket":
-            case "Rocket(Clone)":
-                Debug.Log("Rocket");
+            case "RocketItem":
+            case "RocketItem(Clone)":
+                //Debug.Log("Rocket");
                 if (!timeRokect.checkRunning())
                 {
                     Rocket(false);
                     timeRokect.Run();
                 }
+                else
+                {
+                    Debug.Log("tc: " + timePowerUp.GetElapsedSeconds());
+                    timeRokect.SetElapsedSeconds(timeRokect.GetElapsedSeconds() + 5);
+                    Debug.Log("sau: " + timePowerUp.GetElapsedSeconds());
+                }
                 Destroy(collision.gameObject);
                 break;
-            case "Shield":
-            case "Shield(Clone)":
-                Debug.Log("Shield");
+            case "ShieldItem":
+            case "ShieldItem(Clone)":
+                //Debug.Log("Shield");
                 Destroy(collision.gameObject);
                 break;
             default:
@@ -111,17 +126,6 @@ public class TankMover : MonoBehaviour
 
     private void UpdateGold()
     {
-        //To do
-        // gold = current gold + 1;
-        int currentGold = 0;
-        //try
-        //{
-        //    currentGold = int.Parse(GameObject.Find("GoldText").GetComponent<Text>().text);
-        //}
-        //catch (System.Exception)
-        //{
-        //    currentGold = 0;
-        //}
         currentGold++;
         //to do
         GameObject.Find("GoldText").GetComponent<Text>().text = currentGold.ToString();
