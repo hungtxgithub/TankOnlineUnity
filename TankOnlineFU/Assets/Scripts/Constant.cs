@@ -13,5 +13,6 @@ namespace Assets.Scripts
     {
         public const string FILE_SAVE_DIAMOND = "Assets/Scripts/TopUpDiamond/Diamond.json";
         public const string FILE_SAVE_GOLD = "Assets/Gold.json";
+        public const string FILE_SAVE_TANK = "Assets/Tank.json";
     }
 }
