@@ -2732,9 +2732,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTank:
   - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
-  - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
-  - {fileID: 2185695495001854551, guid: a77168ab521034ef8b7b80b9dd64708e, type: 3}
-  - {fileID: 2185695495001854551, guid: bd2a0fbfa8acb284a9f3cfb98e161adf, type: 3}
+  - {fileID: 2185695495001854551, guid: 5fb819cfc4e2ab94fbe10365a7530808, type: 3}
+  - {fileID: 2185695495001854551, guid: 8a3d65895fb085e49a809ca195835bcd, type: 3}
+  - {fileID: 2185695495001854551, guid: 5d36788b05e8aa1408f7e0d00b091998, type: 3}
 --- !u!4 &1769330311
 Transform:
   m_ObjectHideFlags: 0

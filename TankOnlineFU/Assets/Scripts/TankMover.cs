@@ -175,10 +175,9 @@ public class TankMover : MonoBehaviour
      {
         //To do
         // b?n xuyên ??a hình;
-        //GameObject.FindGameObjectsWithTag("BrickCell").ToList().ForEach(x => x.GetComponent<WallBrickController>().isEffect = type);
-        //GameObject.FindGameObjectsWithTag("StoneCell").ToList().ForEach(x => x.GetComponent<WallSteelController>().isEffect = type);
+        GameObject.FindGameObjectsWithTag("BrickCell").ToList().ForEach(x => x.GetComponent<WallBrickController>().isEffect = type);
+        GameObject.FindGameObjectsWithTag("StoneCell").ToList().ForEach(x => x.GetComponent<WallSteelController>().isEffect = type);
 
-        gameObject.GetComponent<TankFirer>().bulletEffect = type;
 
         if (type)
         {
