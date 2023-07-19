@@ -20,6 +20,8 @@ public class MenuController : MonoBehaviour
 
     public void PlaySolo()
     {
+
+        StateMapName.mapName = "Map" + SaveFile.Instance.countMap();
         SceneManager.LoadScene(Scene.TwoPlayerScene);
     }
 
